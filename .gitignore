@@ -6,6 +6,7 @@ include/
 # Django related 
 # src/<yourproject>/settings/local.py
 # static-cdn/  # any collected static files 
+reports/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
