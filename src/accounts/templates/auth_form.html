@@ -1,0 +1,23 @@
+{% extends "includes/base.html" %}
+{% load crispy_forms_tags %}
+
+    {% load custom_markdown %}
+
+    {% block header %}
+        <div class="header">
+            <h1><code>Blog Post</code></h1>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="post">
+        <h3>{{ object.title }}</h3>
+        <p>
+        </div>
+        <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+            {{ form|crispy }}
+            <input type='submit' class='btn btn-default' value='{{ title }}' />
+        </form>
+      </div><!--/.col-sm-12 -->
+    {% endblock content %}

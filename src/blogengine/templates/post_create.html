@@ -1,0 +1,39 @@
+{% extends "includes/base.html" %}
+{% load crispy_forms_tags %}
+
+    {% load custom_markdown %}
+    {% block title %} Create Post Form {% endblock %}
+    {% block header %}
+        <div class="header">
+            <h1><code>Create Post</code></h1>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+    <div class="col-sm-12 blog-main">
+        <div class="form-group">
+        <p>
+          <form action="" method="post">{% csrf_token %}
+              {{ form | crispy }}
+              <input type="submit" value="Save" />
+          </form>
+        </p>
+        <hr>
+        <h3> <span class="glyphicon glyphicon-duplicate" aria-hidden="true">   </span>  Copy the text to clipboard before SAVE. Better safe than sorry!</h3>
+        <p> Win Keyboard Shorcuts: <big><kbd>CTL</kbd> + <kbd>A</kbd></big> select all text in the active box, <big><kbd>CTL</kbd> + <kbd>C</kbd></big> copy to clipboard</p>
+        <p> Mac Keyboard Shorcuts: <big><kbd>CMD</kbd> + <kbd>A</kbd></big> select all text in the active box, <big><kbd>CMD</kbd> + <kbd>C</kbd></big> copy to clipboard</p>
+        <hr>
+        <nav>
+          <ul class="pager">
+            <li class="previous pull-left"><a href="/blog/"><span aria-hidden="true">&larr;</span> Article List</a></li>
+            <li class=" pull-right"><a href="#">Back to top</a></li>
+          </ul>
+        </nav>
+        </div>
+      </div><!--/.col-sm-12 -->
+
+
+    {% endblock %}
+
+{% block comments %}
+{% endblock %}

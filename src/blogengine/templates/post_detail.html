@@ -1,0 +1,87 @@
+{% extends "includes/base.html" %}
+
+    {% load custom_markdown %}
+
+    {% block header %}
+        <div class="header">
+            <h1><code>Blog Post</code></h1>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+    <div class="col-sm-12 blog-main">
+        <div class="post">
+        <h3>{{ object.title }}</h3>
+        <p>
+          <small>
+            {{ object.pub_date }}
+            <span class="h3">
+              {% if post.category %}
+                <a href="{{ post.category.get_absolute_url }}"><span class="label label-default">{{ post.category.name }}</span></a>
+              {% endif %}
+            </span>
+            <span class="h4">
+            {% for tag in post.tags.all %}
+              <a href="{{ tag.get_absolute_url }}"><span class="label label-warning">{{ tag.name }}</span></a>
+            {% endfor %}
+            </span>
+          </small>
+        </p>
+        <hr>
+        <p class="text-justified">{{ object.text|custom_markdown }}</p>
+        <hr>
+        <nav>
+          <ul class="pager">
+            <li class="previous pull-left"><a href="/blog/"><span aria-hidden="true">&larr;</span> Article List</a></li>
+            <li class=" pull-right"><a href="#">Back to top</a></li>
+          </ul>
+        </nav>
+        </div>
+      </div><!--/.col-sm-12 -->
+
+
+    {% endblock %}
+
+{% block comments %}
+  {% if DISQUS %}
+      <div id="disqus_thread"></div>
+      <script>
+          /**
+           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+           *  https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables
+           */
+           var disqus_config = function () {
+               this.page.url = 'http://{{ post.site }}{{ post.get_absolute_url }}';
+               this.page.identifier = '{{ post.get_absolute_url }}';
+               this.page.title = '{{ post.title }}';
+           };
+          /*
+          var disqus_config = function () {
+              this.page.url = {{ post.get_absolute_url }};  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              this.page.title = 'title';
+              // https://disqus.com/api/docs/categories/ - 15 categories recommended for perf reasons
+              this.page.category_id = '123456'; // using category Sports which has ID 123456, if not it goes to General
+          };
+          */
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+
+              {% if  post.site|stringformat:"s" == "ionescu77.com" %}
+              s.src = '//ionescu77.disqus.com/embed.js';
+              {% else %}
+              s.src = '//ionescu77prelive.disqus.com/embed.js';
+              console.log("{{ post.site }}");
+              {% endif %}
+
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  {% else %}
+      <div id="disqus_thread"><p>Disqus disabled...</p></div>
+  {% endif %}
+
+{% endblock %}

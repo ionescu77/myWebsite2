@@ -1,0 +1,422 @@
+/* General Landing Page style */
+
+
+
+/* code format for brand */
+code {
+    color: #f0ad4e;
+    background-color: transparent;
+}
+
+pre {
+   font-family: "courier new", courier, monospace;
+   font-size: 14px;
+}
+
+.container-cover {
+  height: 66vh;
+}
+
+.content_body {
+    text-align: center;
+}
+
+.center_footer {
+    text-align: center;
+}
+
+.carousel-caption {
+    /* rounded corners: */
+    border-radius: 35px 35px 35px 35px;
+    position: relative;
+    margin-top: 15%;
+    right: 15%;
+    bottom: 20px;
+    left: 0%;
+    z-index: 10;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    background: rgba(0,0,0,0.7);
+}
+
+.landing-caption {
+    margin-top: 5%;
+}
+
+p {
+    font-size: 16px;
+    /*line-height: 1.5em;*/
+}
+
+p.lower {
+    font-size: 14px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+a {
+    color: #f6bf01;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: #f6bf01;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Trebuchet MS, Geneva, sans-serif;
+    /*font-family: Verdana, Geneva, sans-serif;*/
+    font-weight: 100;
+    line-height: 1.3em;
+}
+
+.quote {
+    font-weight: 100;
+}
+
+.page-header {
+  text-transform: initial;
+  /*font-family: "Times"*/
+}
+
+body .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+body .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
+body .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+/*    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; */
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+
+.btn-xl {
+    border-color: #f6bf01;
+    padding: 30px 70px;
+    border-radius: 35px;
+    border-width: medium;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    /*color: #f6bf01;*/
+    color: transparent;
+    background-color: transparent;
+    margin-top: 30vh;
+}
+
+.btn-xl:hover,
+.btn-xl:focus,
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+    /*border-color: #fff;*/
+    color: #f6bf01;
+    background-color: transparent;
+}
+
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+    background-image: none;
+}
+
+.btn-xl.disabled,
+.btn-xl[disabled],
+fieldset[disabled] .btn-xl,
+.btn-xl.disabled:hover,
+.btn-xl[disabled]:hover,
+fieldset[disabled] .btn-xl:hover,
+.btn-xl.disabled:focus,
+.btn-xl[disabled]:focus,
+fieldset[disabled] .btn-xl:focus,
+.btn-xl.disabled:active,
+.btn-xl[disabled]:active,
+fieldset[disabled] .btn-xl:active,
+.btn-xl.disabled.active,
+.btn-xl[disabled].active,
+fieldset[disabled] .btn-xl.active {
+    border-color: orange;
+    background-color: orange;
+}
+
+.btn-xl .badge {
+    color: orange;
+    background-color: #fff;
+}
+
+/* Navbar dropdown background color */
+
+.inverse-dropdown {
+  background-color: #222;
+  border-color: #080808;
+}
+.inverse-dropdown > li > a {
+  color: #9d9d9d;
+}
+.inverse-dropdown > li > a:hover {
+  color: #222;
+  background-image: none;
+  background-color: none;
+}
+.inverse-dropdown > .divider {
+  background-color: #9d9d9d;
+}
+
+/* SOCIAL Buttons Style */
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+    border-color: #f6bf01;
+    box-shadow: 0 0 2px 2px #fff;  /* for hollow circle with 3px border*/
+    display: block;
+    width: 60px;
+    height: 60px;
+    /*border-radius: 50%;*/
+    border-radius: 20px 20px 20px 20px;
+    font-size: 14px;
+    line-height: 70px;
+    outline: 0;
+    color: #fff;
+    background-color: transparent;
+  /*  background-color: #222;*/
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+ul.social-buttons i {
+   padding-top: 20px;
+}
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: #f0ad4e;
+}
+
+.list-inline>li { /*Padding between social buttons */
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px
+}
+
+.credits {
+    margin-top: 5vh;
+}
+
+/* Media Screen Sizes*/
+/* Phone =============================================*/
+@media screen
+and (min-width: 320px)
+and (max-width: 480px) {
+
+  .carousel {
+    height: 300px;
+    margin-bottom: 60px;
+  }
+
+  .carousel .item {
+    height: 300px;
+    background-color: #777;
+  }
+
+  .background-caption  {
+    margin-top: 150px !important;
+  }
+
+  .container-cover {
+    height: 70vh;
+  }
+
+  body .intro-text {
+      padding-top: 40px;
+      padding-bottom: 40px;
+  }
+  body .intro-text .intro-lead-in {
+      margin-bottom: 30px;
+      font-family: "Droid Serif",Verdana, Geneva, sans-serif;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 18px;
+  }
+  body .intro-text .intro-heading {
+      margin-bottom: 30px;
+      text-transform: uppercase;
+  /*    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; */
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 24px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  p {
+  font-size: 14px;
+  }
+  ul.social-buttons li a {
+     display: inline-block;
+     vertical-align: baseline;
+      width: 50px;
+      height: 50px;
+      border-radius: 30%;
+      font-size: 10px;
+      line-height: 60px;
+      outline: 0;
+      color: #fff;
+      background-color: transparent;
+    /*  background-color: #222;*/
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      transition: all .3s;
+  }
+  ul.social-buttons i {
+     padding-top: 12px;
+  }
+  .btn-xl {
+      border-color: #f6bf01;
+      padding: 15px 40px;
+      border-radius: 80px;
+      text-transform: uppercase;
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      /*color: #fff;*/
+      /*background-color: rgba(0,0,0,0.5);*/
+      color: transparent;
+      background-color: transparent;
+      margin-top: 35vh;
+  }
+  .credits {
+      margin-top: 5vh;
+  }
+}
+
+/* iPad and stuff =======================================*/
+@media screen
+and (min-width: 480px)
+and (max-width: 768px) {
+
+  .carousel {
+    height: 300px;
+    margin-bottom: 60px;
+  }
+
+  .carousel .item {
+    height: 300px;
+    background-color: #777;
+  }
+
+  body .intro-text {
+      padding-top: 90px;
+      padding-bottom: 45px;
+  }
+  ul.social-buttons li a {
+     display: inline-block;
+     vertical-align: baseline;
+      width: 60px;
+      height: 60px;
+      border-radius: 30%;
+      font-size: 12px;
+      line-height: 70px;
+      outline: 0;
+      color: #fff;
+      background-color: transparent;
+    /*  background-color: #222;*/
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      transition: all .3s;
+  }
+  ul.social-buttons i {
+     padding-top: 14px;
+  }
+  .credits {
+      margin-top: 5vh;
+  }
+
+}
+
+/* iPad and stuff */
+@media screen
+and (min-width: 768px)
+and (max-width: 1024px) {
+  body .intro-text {
+      padding-top: 90px;
+      padding-bottom: 45px;
+  }
+  ul.social-buttons li a {
+     display: inline-block;
+     vertical-align: baseline;
+      width: 70px;
+      height: 70px;
+      border-radius: 30%;
+      font-size: 0.9em;
+      line-height: 80px;
+      outline: 0;
+      color: #fff;
+      background-color: transparent;
+    /*  background-color: #222;*/
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      transition: all .3s;
+  }
+  ul.social-buttons i {
+     padding-top: 14px;
+  }
+  .credits {
+      margin-top: 5vh;
+  }
+}
+
+@media screen
+and (min-width: 1024px) {
+
+  ul.social-buttons li a {
+      width: 70px;
+      height: 70px;
+      border-radius: 25px 25px 25px 25px;
+      font-size: 16px;
+      line-height: 80px;
+      outline: 0;
+      color: #fff;
+      background-color: transparent;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      transition: all .3s;
+  }
+
+}

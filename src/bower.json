@@ -1,0 +1,22 @@
+{
+  "name": "static",
+  "version": "0.0.1",
+  "authors": [
+    "Razvan Andrei Ionescu <ionescu77@gmail.com>"
+  ],
+  "description": "Blog Bower Boostrap",
+  "license": "MIT",
+  "homepage": "ionescu77.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "blogengine/static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "html5-boilerplate": "~5.2.0"
+  }
+}

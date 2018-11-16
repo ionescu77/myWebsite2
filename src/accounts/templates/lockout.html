@@ -1,0 +1,28 @@
+{% extends "includes/base.html" %}
+{% load crispy_forms_tags %}
+
+    {% load custom_markdown %}
+
+    {% block header %}
+        <div class="header">
+            <h1><code>BLOCKED</code></h1>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+    <div class="col-sm-6 col-sm-offset-3">
+        <div id="lockout-message">
+        <center>
+        <h3>
+        <a href="https://www.google.com/search?q=restricted">
+          <i class="glyphicon glyphicon-lock"></i>
+        </a>
+        </h3>
+        <br>
+        <h3>
+        Restricted
+        </h3>
+        </center>
+        </div>
+      </div><!--/.col-sm-12 -->
+    {% endblock content %}

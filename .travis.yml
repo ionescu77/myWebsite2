@@ -1,0 +1,28 @@
+language: python
+
+python:
+    - "2.7.9"
+#    - "3.3"
+
+services:
+    - postgresql
+
+env:
+  global:
+    - SECRET_KEY_RAZ="test§$%§$§%"
+    - DJANGO_SETTINGS_MODULE="ionescu77Project.settings.staging"
+
+# command to install dependencies
+install:
+    - pip install -r requirements/test.txt
+
+before_script:
+    - psql -c "CREATE DATABASE travisci;" -U postgres
+    - cd src; python manage.py makemigrations; python manage.py migrate
+
+# command to run tests
+script:
+    - coverage run --include="blogengine/*" --omit="blogengine/migrations/*" manage.py test blogengine
+
+after_success:
+    coveralls
