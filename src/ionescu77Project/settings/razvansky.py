@@ -18,7 +18,7 @@ INSTALLED_APPS += (
     'django.contrib.syndication',
     'django.contrib.sitemaps',
     'crispy_forms',
-#    'axes',        # disable, new axes update requires another cache backend changes
+    'axes',
 )
 
 SITE_ID = 1
@@ -26,14 +26,33 @@ SITE_ID = 1
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only
 
-INSTALLED_APPS += ('django_jenkins',)
+# ///////
+# ------- django-axes: CACHES enabled, 20181119
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'axes_cache': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+# ------- #
 
+INSTALLED_APPS += ('django_jenkins',)
 JENKINS_TASKS = ()
 
 PROJECT_APPS = ['blogengine']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-AXES_VERBOSE = False
-
+# ///////
+# ------- django-axes: Settings for this:
+AXES_CACHE = 'axes_cache'
+AXES_VERBOSE = True
 AXES_LOCKOUT_TEMPLATE = 'lockout.html'
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# ------- #
