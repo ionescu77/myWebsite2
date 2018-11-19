@@ -18,7 +18,7 @@ INSTALLED_APPS += (
     'django.contrib.syndication',
     'django.contrib.sitemaps',
     'crispy_forms',
-    'axes',
+#    'axes',        # disable, new axes update requires another cache backend changes
 )
 
 SITE_ID = 1
