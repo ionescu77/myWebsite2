@@ -9,9 +9,11 @@ myWebsite upgraded to django 1.11.16 and python 3.6.7 (thanks @alexinntekt)
 
 
 # myWebsite
-Release Tests*: [![Build Status](https://travis-ci.org/ionescu77/myWebsite.svg)](https://travis-ci.org/ionescu77/myWebsite)
+Release Tests*: [![Build Status](https://travis-ci.com/ionescu77/myWebsite2.svg)](https://travis-ci.com/ionescu77/myWebsite2)
 
-Code Coverage*: [![Coverage Status](https://coveralls.io/repos/ionescu77/myWebsite/badge.svg?branch=master&service=github)](https://coveralls.io/github/ionescu77/myWebsite?branch=master)
+
+
+Code Coverage*: [![Coverage Status](https://coveralls.io/repos/ionescu77/myWebsite2/badge.svg?branch=master&service=github)](https://coveralls.io/github/ionescu77/myWebsite2?branch=master)
 
 #Notes to (mainly) myself:
 
