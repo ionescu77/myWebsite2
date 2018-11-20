@@ -85,7 +85,7 @@ class PostTest(TestCase):
       category = CategoryFactory()
       #   Check Category Model methods
       self.assertTrue(isinstance(category,Category))
-      self.assertEqual(category.__unicode__(), category.name)
+      self.assertEqual(category.__str__(), category.name)
 
       # Check if we can find it
       all_categories = Category.objects.all()
