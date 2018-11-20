@@ -292,13 +292,13 @@ class AdminTest(BaseAcceptanceTest):
             # Log in
             self.client.login(username='testuser', password="test")
             # Edit the category
-            response = self.client.post('/administrare/blogengine/category/' + str(category.pk) + '/', {
+            response = self.client.post('/administrare/blogengine/category/' + str(category.pk) + '/change/', {
                 'name': 'perl',
                 'description': 'The Perl programming language'
                 }, follow=True)
             self.assertEquals(response.status_code, 200)
             # Check changed successfully
-            self.assertTrue(b'changed successfully' in response.content)
+            self.assertTrue('changed successfully' in response.content.decode('utf-8'))
             # Check category amended
             all_categories = Category.objects.all()
             self.assertEquals(len(all_categories), 1)
@@ -351,7 +351,7 @@ class AdminTest(BaseAcceptanceTest):
             # Log in
             self.client.login(username='testuser', password='test')
             # Edit the tag
-            response = self.client.post('/administrare/blogengine/tag/' + str(tag.pk) + '/', {
+            response = self.client.post('/administrare/blogengine/tag/' + str(tag.pk) + '/change/', {
                 'name': 'perlsky',
                 'description': 'The Perlsky programming language'
                 }, follow=True)
@@ -437,7 +437,7 @@ class AdminTest(BaseAcceptanceTest):
             # Create the post
             blogpost = PostFactory()
             # Edit the post
-            response = self.client.post('/administrare/blogengine/post/' + str(blogpost.pk) + '/', {
+            response = self.client.post('/administrare/blogengine/post/' + str(blogpost.pk) + '/change/', {
                 'title': 'My EDITED post',
                 'text': 'This is my EDITED editable blog post',
                 'pub_date_0': '2015-05-28',
@@ -770,7 +770,7 @@ class PostCreateViewTest(BaseAcceptanceTest):
             # Check Date was set got pub_date, match for curent year
             curent_year = timezone.now().strftime("%Y-%m-%d")
             # print "%s" %curent_year
-            self.assertTrue( curent_year in response.content)
+            self.assertTrue( curent_year in response.content.decode("utf-8"))
             # Check Save button in Post Create Form Page
             self.assertTrue(b'Save' in response.content)
             # Create the new post using the Form

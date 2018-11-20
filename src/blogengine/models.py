@@ -14,7 +14,7 @@ class Category(models.Model):
             self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
     def get_absolute_url(self):
-        return "/blog/category/%s/" % (self.slug)
+        return "/blog/category/%s/" %(self.slug)
     def __str__(self):
         return self.name
     class Meta:
@@ -29,7 +29,7 @@ class Tag(models.Model):
             self.slug = slugify(self.name)
         super(Tag, self).save(*args, **kwargs)
     def get_absolute_url(self):
-        return "/blog/tag/%s/" % (self.slug)
+        return "/blog/tag/%s/" %(self.slug)
     def __str__(self):
         return self.name
 
