@@ -17,7 +17,16 @@ def login_view(request):
     if form.is_valid():
        username = form.cleaned_data.get("username")
        password = form.cleaned_data.get('password')
-       user = authenticate(username=username, password=password)
+       user = authenticate(request, username=username, password=password)
+       if username and password:
+           if not user:
+               return render(request, "lockout.html", {"title": title})
+           if not user.check_password(password):
+               # raise exceptions.AuthenticationFailed(_('Invalid username/password.'))
+               return render(request, "lockout.html", {"title": title})
+           if not user.is_active:
+               # raise exceptions.AuthenticationFailed(_('User inactive or deleted.'))
+               return render(request, "lockout.html", {"title": title})
        login(request, user)
        print(request.user.is_authenticated())
     #    return redirect("/blog/")

@@ -1,6 +1,6 @@
 # myWebsite2
-myWebsite upgraded to django 1.11 and py3
-you can find the old read.me below
+myWebsite upgraded to django 1.11.16 and python 3.6.7 (thanks @alexinntekt)
+[you can also find the old read.me below]
 
 - created a new github private repository
 - added gitignore from the start
@@ -9,9 +9,9 @@ you can find the old read.me below
 
 
 # myWebsite
-Release Tests: [![Build Status](https://travis-ci.org/ionescu77/myWebsite.svg)](https://travis-ci.org/ionescu77/myWebsite)
+Release Tests*: [![Build Status](https://travis-ci.org/ionescu77/myWebsite.svg)](https://travis-ci.org/ionescu77/myWebsite)
 
-Code Coverage: [![Coverage Status](https://coveralls.io/repos/ionescu77/myWebsite/badge.svg?branch=master&service=github)](https://coveralls.io/github/ionescu77/myWebsite?branch=master)
+Code Coverage*: [![Coverage Status](https://coveralls.io/repos/ionescu77/myWebsite/badge.svg?branch=master&service=github)](https://coveralls.io/github/ionescu77/myWebsite?branch=master)
 
 #Notes to (mainly) myself:
 
@@ -19,20 +19,20 @@ Codul sursă de la site-ul meu, încă nepublicat și mereu în lucru.
 
 Run coverage locally and generate nice html reports (in ./reports/coverage)
 ```
-python src/manage.py jenkins --enable-coverage --coverage-format html blogengine
+python3 src/manage.py jenkins --enable-coverage --coverage-format html blogengine
 ```
 
 Run tests locally with jenkins (django style does not work anymore)
 
 ```
-python src/manage.py jenkins blogengine
+python3 src/manage.py jenkins blogengine
 ```
-20170311
+20181120
 
 Workflow (using git hooks & shell scripts for deployment):
-- dev -> local virtualenv (python 2.7.9 & runserver)
-- test -> ionescu77.avproiect.com (python 2.7.9 & mod_passenger)
-- live -> ionescu77.com (python 2.7.9 & & mod_wsgi)
+- dev -> local.txt -> virtualenv (python 3.6 & runserver)
+- test -> staging.txt -> ionescu77.avproiect.com (python 3.6 & mod_wsgi)
+- live -> production.txt -> ionescu77.com (python 3.6 & & mod_wsgi)
 
 2016.03.08
 
