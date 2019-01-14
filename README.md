@@ -1,5 +1,12 @@
 # myWebsite2
-myWebsite upgraded to django 1.11.16 and python 3.6.7 (thanks @alexinntekt)
+
+
+[![Build Status](https://travis-ci.com/ionescu77/myWebsite2.svg)](https://travis-ci.com/ionescu77/myWebsite2)
+
+[![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=master)
+
+myWebsite2 is myWebsite upgraded & migrated to django 1.11.16 and python 3.6.7 (thanks @alexinntekt)
+
 [you can also find the old read.me below]
 
 - created a new github private repository
@@ -9,15 +16,10 @@ myWebsite upgraded to django 1.11.16 and python 3.6.7 (thanks @alexinntekt)
 
 
 # myWebsite
-Release Tests*: [![Build Status](https://travis-ci.com/ionescu77/myWebsite2.svg)](https://travis-ci.com/ionescu77/myWebsite2)
-
-
-
-Code Coverage*: [![Coverage Status](https://coveralls.io/repos/ionescu77/myWebsite2/badge.svg?branch=master&service=github)](https://coveralls.io/github/ionescu77/myWebsite2?branch=master)
 
 #Notes to (mainly) myself:
 
-Codul sursă de la site-ul meu, încă nepublicat și mereu în lucru.
+Codul sursă de la site-ul meu, mereu în lucru.
 
 Run coverage locally and generate nice html reports (in ./reports/coverage)
 ```
