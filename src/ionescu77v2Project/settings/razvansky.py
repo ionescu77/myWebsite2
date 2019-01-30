@@ -21,7 +21,7 @@ INSTALLED_APPS += (
     'axes',
 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only
