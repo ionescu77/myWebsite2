@@ -20,7 +20,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+# dist/  # for this specific project this is interfeering with bower/boostrap/dist
 downloads/
 eggs/
 .eggs/
