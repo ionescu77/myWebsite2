@@ -10,7 +10,7 @@ services:
 env:
   global:
     - SECRET_KEY_RAZ="test§$%§$§%"
-    - DJANGO_SETTINGS_MODULE="ionescu77Project.settings.test"
+    - DJANGO_SETTINGS_MODULE="ionescu77Project.settings.travis"
 
 # command to install dependencies
 install:
