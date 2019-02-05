@@ -385,9 +385,10 @@ class AdminTest(BaseAcceptanceTest):
 
     def test_create_admin_post(self):
         with self.settings(AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend',]):
+            # Create the site
+            site = SiteFactory()
             # Create the category
             category = CategoryFactory()
-
             # Create the tag
             tag = TagFactory()
 
@@ -406,7 +407,7 @@ class AdminTest(BaseAcceptanceTest):
                 'pub_date_0': '2013-12-28',
                 'pub_date_1': '22:00:04',
                 'slug': 'my-first-post',
-                'site': '1',
+                'site': str(site.pk),
                 'category': str(category.pk),
                 'tags': str(tag.pk)
             },
@@ -425,10 +426,8 @@ class AdminTest(BaseAcceptanceTest):
         with self.settings(AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend',]):
             # Create the site
             site = SiteFactory()
-
             # Create the category
             category = CategoryFactory()
-
             # Create the tag
             tag = TagFactory()
 
@@ -443,7 +442,7 @@ class AdminTest(BaseAcceptanceTest):
                 'pub_date_0': '2015-05-28',
                 'pub_date_1': '23:00:04',
                 'slug': 'my-edited-post',
-                'site': '1',
+                'site': str(site.pk),
                 'category': str(category.pk),
                 'tags': str(tag.pk)
             },
@@ -757,6 +756,8 @@ class PostCreateViewTest(BaseAcceptanceTest):
 
     def test_create_valid_post_form(self):
         with self.settings(AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend',]):
+            # Create the site
+            site = SiteFactory()
             # Create the category
             category = CategoryFactory()
             # Create the tag
@@ -780,7 +781,7 @@ class PostCreateViewTest(BaseAcceptanceTest):
                 'title': 'My first post',
                 'text': 'This is my first post',
                 'pub_date': valid_date_time,
-                'site': '1',
+                'site': str(site.pk),
                 'category': str(category.pk),
                 'tags': str(tag.pk)
             },
