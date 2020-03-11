@@ -4,7 +4,7 @@ coverage==4.5.2
 coveralls==1.5.1
 Django==1.11.23
 django-appconf==1.0.2
-django-axes==4.4.2
+django-axes==5.3.0
 django-crispy-forms==1.7.2
 django-ipware==2.1.0
 django-jenkins==0.110.0
