@@ -14,7 +14,7 @@ Faker==1.0.0
 feedparser==5.2.1
 idna==2.9
 markdown2==2.3.8
-Pygments==2.2.0
+Pygments==2.6.1
 python-dateutil==2.7.5
 pytz==2018.7
 requests==2.20.1
