@@ -1,6 +1,6 @@
 certifi==2018.10.15
 chardet==3.0.4
-coverage==4.5.2
+coverage==5.1
 coveralls==1.5.1
 Django==1.11.28
 django-appconf==1.0.4
