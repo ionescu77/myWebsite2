@@ -7,7 +7,7 @@ chardet==3.0.4
 coverage==4.5.2
 coveralls==1.5.1
 Django==1.11.28
-django-appconf==1.0.2
+django-appconf==1.0.4
 django-axes==4.4.2
 django-crispy-forms==1.7.2
 django-ipware==2.1.0
