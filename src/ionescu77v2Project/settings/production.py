@@ -24,7 +24,7 @@ DEBUG = False
 # TEMPLATE_DEBUG = True # Deprecated see below TEMPLATES:
 DISQUS = True
 
-ALLOWED_HOSTS = ['ionescu77.com']
+ALLOWED_HOSTS = ['ionescu77.com','www.ionescu77.com','staging.ionescu77.com']
 
 INSTALLED_APPS += (
     'landing',
@@ -43,11 +43,33 @@ SITE_ID = 1
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only
 
-STATIC_ROOT = '/home/ionescu77/webapps/apollo13/ionescu77/static/'
-MEDIA_ROOT = '/home/ionescu77/webapps/apollo13/ionescu77/media/'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 AXES_VERBOSE = False
 
 AXES_LOCKOUT_TEMPLATE = 'lockout.html'
+
+# ///////
+# ------- django-axes: CACHES enabled, 20181119
+# ------- django-axes: CACHES enabled, 20200531
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'axes_cache': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+# ------- #
+
+# ///////
+# ------- django-axes: Settings for this:
+AXES_CACHE = 'axes_cache'
+AXES_VERBOSE = False
+AXES_LOCKOUT_TEMPLATE = 'lockout.html'
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# ------- #
