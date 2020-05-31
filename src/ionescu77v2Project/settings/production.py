@@ -26,18 +26,6 @@ DISQUS = True
 
 ALLOWED_HOSTS = ['ionescu77.com']
 
-INSTALLED_APPS += (
-    'landing',
-    'blogengine',
-    'accounts',
-    'django.contrib.sites',
-    'django.contrib.flatpages',
-    'django.contrib.syndication',
-    'django.contrib.sitemaps',
-    'crispy_forms',
-    'axes',
-)
-
 SITE_ID = 1
 
 #TEST_DATABASE_CHARSET=UTF8
@@ -48,6 +36,7 @@ MEDIA_ROOT = '/home/ionescu77/webapps/apollo13/ionescu77/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+# ///////
+# ------- django-axes: Settings for this:
 AXES_VERBOSE = False
-
-AXES_LOCKOUT_TEMPLATE = 'lockout.html'
+# ------- #

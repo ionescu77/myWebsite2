@@ -98,6 +98,48 @@ USE_L10N = True
 
 USE_TZ = True
 
+# This should go into all settings files:
+#
+INSTALLED_APPS += (
+    'landing',
+    'blogengine',
+    'accounts',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django.contrib.syndication',
+    'django.contrib.sitemaps',
+    'crispy_forms',
+    'axes',
+)
+
+
+# This is for django axes, we'll se how it works local
+#
+# ///////
+# ------- django-axes: CACHES enabled, 20181119
+# ------- django-axes: CACHES enabled, 20200531
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'axes_cache': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+# ------- #
+
+# ///////
+# ------- django-axes: Settings for this:
+AXES_CACHE = 'axes_cache'
+AXES_VERBOSE = False
+AXES_LOCKOUT_TEMPLATE = 'lockout.html'
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# ------- #
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
