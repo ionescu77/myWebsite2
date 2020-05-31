@@ -40,16 +40,34 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
-MIDDLEWARE_CLASSES = (
+# MIDDLEWARE_CLASSES = (
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'django.middleware.security.SecurityMiddleware',
+# )
+
+MIDDLEWARE = [
+    # The following is the list of default middleware in new Django projects.
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-)
+
+    # AxesMiddleware should be the last middleware in the MIDDLEWARE list.
+    # It only formats user lockout messages and renders Axes lockout responses
+    # on failed user authentication attempts from login views.
+    # If you do not want Axes to override the authentication response
+    # you can skip installing the middleware and use your own views.
+    'axes.middleware.AxesMiddleware',
+]
 
 ROOT_URLCONF = 'ionescu77v2Project.urls'
 
@@ -97,6 +115,48 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# This should go into all settings files:
+#
+INSTALLED_APPS += (
+    'landing',
+    'blogengine',
+    'accounts',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django.contrib.syndication',
+    'django.contrib.sitemaps',
+    'crispy_forms',
+    'axes',
+)
+
+
+# This is for django axes, we'll se how it works local
+#
+# ///////
+# ------- django-axes: CACHES enabled, 20181119
+# ------- django-axes: CACHES enabled, 20200531
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'axes_cache': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+# ------- #
+
+# ///////
+# ------- django-axes: Settings for this:
+AXES_CACHE = 'axes_cache'
+AXES_VERBOSE = False
+AXES_LOCKOUT_TEMPLATE = 'lockout.html'
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# ------- #
 
 
 # Static files (CSS, JavaScript, Images)
