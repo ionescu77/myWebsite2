@@ -21,7 +21,7 @@ from .database_production import DATABASES
 DATABASES = DATABASES
 
 DEBUG = False
-TEMPLATE_DEBUG = False
+# TEMPLATE_DEBUG = True # Deprecated see below TEMPLATES:
 DISQUS = True
 
 ALLOWED_HOSTS = ['ionescu77.com']
