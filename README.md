@@ -1,14 +1,14 @@
 # myWebsite2
 
 ![Python](https://img.shields.io/badge/Python-3.6.8-blue)
-![Django](https://img.shields.io/badge/Django-1.11.16-blue)
+![Django](https://img.shields.io/badge/Django-1.11.28-blue)
 ![Postgresql](https://img.shields.io/badge/Postgresql-9.6-blue)
 [![Build Status](https://travis-ci.com/ionescu77/myWebsite2.svg)](https://travis-ci.com/ionescu77/myWebsite2)
 [![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=master)
 
 ## About
 
-myWebsite2 is myWebsite upgraded & migrated to django 1.11.16 and python 3.6.7 (thanks @alexinntekt)
+myWebsite2 is myWebsite upgraded & migrated to django ~1.11.16~ 1.11.28 and python 3.6.7 (thanks @alexinntekt)
 
 [you can also find the old read.me below]
 
