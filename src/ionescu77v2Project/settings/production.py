@@ -31,9 +31,6 @@ SITE_ID = 1
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only
 
-STATIC_ROOT = '/home/ionescu77/webapps/apollo13/ionescu77/static/'
-MEDIA_ROOT = '/home/ionescu77/webapps/apollo13/ionescu77/media/'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # ///////
