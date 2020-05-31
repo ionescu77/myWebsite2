@@ -24,7 +24,7 @@ DEBUG = False
 # TEMPLATE_DEBUG = True # Deprecated see below TEMPLATES:
 DISQUS = True
 
-ALLOWED_HOSTS = ['ionescu77.com']
+ALLOWED_HOSTS = ['ionescu77.com','www.ionescu77.com','staging.ionescu77.com']
 
 SITE_ID = 1
 
