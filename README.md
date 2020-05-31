@@ -1,9 +1,12 @@
 # myWebsite2
 
-
+![Python](https://img.shields.io/badge/Python-3.6.8-blue)
+![Django](https://img.shields.io/badge/Django-1.11.16-blue)
+![Postgresql](https://img.shields.io/badge/Postgresql-9.6-blue)
 [![Build Status](https://travis-ci.com/ionescu77/myWebsite2.svg)](https://travis-ci.com/ionescu77/myWebsite2)
-
 [![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=master)
+
+## About
 
 myWebsite2 is myWebsite upgraded & migrated to django 1.11.16 and python 3.6.7 (thanks @alexinntekt)
 
@@ -14,6 +17,21 @@ myWebsite2 is myWebsite upgraded & migrated to django 1.11.16 and python 3.6.7 (
 - added GNU GPL v3.0 license (you use it it remains open source, not closed source)
 - extended this README
 
+
+## Environment
+- environment variables needed:
+
+```bash
+# production
+SECRET_KEY_IONESCU77="--some-key--"
+export SECRET_KEY_IONESCU77
+export DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.production"
+DB_NAME_IONESCU77="--some-db-name--"
+DB_USER_IONESCU77="--some-db-user--"
+DB_PASS_IONESCU77="--some-db-pass--"
+DB_PORT_IONESCU77="--some-db-port--"
+export DB_NAME_IONESCU77 DB_USER_IONESCU77 DB_PASS_IONESCU77 DB_PORT_IONESCU77
+```
 
 # myWebsite
 
