@@ -26,18 +26,6 @@ DISQUS = True
 
 ALLOWED_HOSTS = ['ionescu77.com','www.ionescu77.com','staging.ionescu77.com']
 
-INSTALLED_APPS += (
-    'landing',
-    'blogengine',
-    'accounts',
-    'django.contrib.sites',
-    'django.contrib.flatpages',
-    'django.contrib.syndication',
-    'django.contrib.sitemaps',
-    'crispy_forms',
-    'axes',
-)
-
 SITE_ID = 1
 
 #TEST_DATABASE_CHARSET=UTF8
@@ -45,31 +33,7 @@ SITE_ID = 1
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-AXES_VERBOSE = False
-
-AXES_LOCKOUT_TEMPLATE = 'lockout.html'
-
-# ///////
-# ------- django-axes: CACHES enabled, 20181119
-# ------- django-axes: CACHES enabled, 20200531
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-    },
-    'axes_cache': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
-}
-# ------- #
-
 # ///////
 # ------- django-axes: Settings for this:
-AXES_CACHE = 'axes_cache'
 AXES_VERBOSE = False
-AXES_LOCKOUT_TEMPLATE = 'lockout.html'
-AUTHENTICATION_BACKENDS = [
-    'axes.backends.AxesModelBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
-
 # ------- #
