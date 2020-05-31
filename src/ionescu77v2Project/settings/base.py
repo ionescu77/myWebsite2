@@ -152,7 +152,7 @@ AXES_CACHE = 'axes_cache'
 AXES_VERBOSE = False
 AXES_LOCKOUT_TEMPLATE = 'lockout.html'
 AUTHENTICATION_BACKENDS = [
-    'axes.backends.AxesModelBackend',
+    'axes.backends.AxesBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
