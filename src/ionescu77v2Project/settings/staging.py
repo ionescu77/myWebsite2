@@ -26,28 +26,14 @@ DISQUS = False
 
 ALLOWED_HOSTS = ['ionescu77.staging.avproiect.com']
 
-INSTALLED_APPS += (
-    'landing',
-    'blogengine',
-    'accounts',
-    'django.contrib.sites',
-    'django.contrib.flatpages',
-    'django.contrib.syndication',
-    'django.contrib.sitemaps',
-    'crispy_forms',
-    'axes',
-)
-
 SITE_ID = 1
 
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only
 
-STATIC_ROOT = '/home/ionescu77/webapps/apollo7/ionescu77/static/'
-MEDIA_ROOT = '/home/ionescu77/webapps/apollo7/ionescu77/media/'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-AXES_VERBOSE = False
-
-AXES_LOCKOUT_TEMPLATE = 'lockout.html'
+# ///////
+# ------- django-axes: Settings for this:
+AXES_VERBOSE = True
+# ------- #
