@@ -21,6 +21,7 @@ env:
 install:
     - pip install "$DJANGO"
     - sed '/^Django==/d' requirements/base.txt
+    - cat requirements/base.txt
     # exclude Django from requirements
     - pip install -r requirements/test.txt
 
