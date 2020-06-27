@@ -19,7 +19,7 @@ sitemaps = {
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^administrare/', include(admin.site.urls)),
+    url(r'^administrare/', include('admin.site.urls')),
 
     # Blogengine URLs
     url(r'^blog/', include('blogengine.urls')),
