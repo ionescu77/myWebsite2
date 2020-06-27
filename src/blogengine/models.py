@@ -38,7 +38,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField()
     text = models.TextField()
     slug = models.SlugField(max_length=120, unique=True)
-    site = models.ForeignKey(Site)
+    site = models.ForeignKey(Site, models.PROTECT)
     category = models.ForeignKey(Category, blank=True, null=True)
     tags = models.ManyToManyField(Tag)
 
