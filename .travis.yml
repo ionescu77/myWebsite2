@@ -22,8 +22,9 @@ env:
 # command to install dependencies
 install:
     - pip install "$DJANGO"
+    - grep -ivE "Django==" requirements/base.txt
     # exclude Django from requirements
-    - pip install -r <(sed '/^[Django]/d' requirements/test.txt)
+    - pip install -r requirements/test.txt
 
 matrix:
   fast_finish: true
