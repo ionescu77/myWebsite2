@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 from django.contrib import admin
 from django.views.generic.base import RedirectView
@@ -20,30 +20,30 @@ sitemaps = {
 admin.autodiscover()
 
 urlpatterns = [
-    path(r'^administrare/', admin.site.urls),
+    path('administrare/', admin.site.urls),
 
     # Blogengine URLs
-    path(r'^blog/', include('blogengine.urls')),
+    path('blog/', include('blogengine.urls')),
 
     # Landing page URLs
-    path(r'^$', include('landing.urls')),
+    path('', include('landing.urls')),
 
     # Accounts page URLs
     #url(r'^$', include('accounts.urls', namespace='accounts')),
     # Accounts login page URLs
 #    url(r'^mylogin/$', axes_dispatch(login_view), name="mylogin"),
-    path(r'^mylogin/$', login_view, name="mylogin"),
+    path('mylogin/', login_view, name="mylogin"),
 
     # Accounts logout page URLs
-    path(r'^mylogout/$', logout_view, name="mylogout"),
+    path('mylogout/', logout_view, name="mylogout"),
 
 
     # Create sitemaps.xml
-    path(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
     # FlatPage URLs
     # path(r'^$', include('django.contrib.flatpages.urls')), # this or catchall does not really work
-    path(r'^about/$', views.flatpage, {'url': '/about/'}, name='about'),
+    path('about/', views.flatpage, {'url': '/about/'}, name='about'),
 
 
 ]
