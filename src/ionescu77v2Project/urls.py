@@ -26,7 +26,7 @@ urlpatterns = [
     path(r'^blog/', include('blogengine.urls')),
 
     # Landing page URLs
-    path(r'^$', include('landing.urls', namespace='landing')),
+    path(r'^$', include('landing.urls')),
 
     # Accounts page URLs
     #url(r'^$', include('accounts.urls', namespace='accounts')),
