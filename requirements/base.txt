@@ -2,7 +2,7 @@ wheel==0.35.1
 
 Django==1.11.29
 django-appconf==1.0.4
-django-axes==5.3.4
+django-axes==5.9.0
 django-crispy-forms==1.9.2
 django-ipware==2.1.0
 
