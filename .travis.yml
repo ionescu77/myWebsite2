@@ -15,13 +15,13 @@ env:
     - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
   matrix:
     include:
-      - name: "Django 1.11"
+      - name: Django 1.11
         env:
           - DJANGO="Django<1.12"
-      - name: "Django 2.2"
+      - name: Django 2.2
         env:
           - DJANGO="Django<2.3"
-      - name: "Django 3.1"
+      - name: Django 3.1
         env:
           - DJANGO="Django<3.2"
 
