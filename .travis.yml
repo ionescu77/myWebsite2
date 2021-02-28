@@ -21,12 +21,13 @@ jobs:
         - SECRET_KEY_RAZ="test§$%§$§%"
         - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
         - DJANGO="Django<2.3"
-  allow_failures:
   - name: "Django 3.1"
     env:
         - SECRET_KEY_RAZ="test§$%§$§%"
         - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
         - DJANGO="Django<3.2"
+  allow_failures:
+    - name: "Django 3.1 Failures permited"
 
 before_script:
     - psql -c "CREATE DATABASE travisci;" -U postgres
