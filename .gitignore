@@ -113,6 +113,5 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-
-# Ignore this mess
+# Add this damn file
 pyvenv.cfg
