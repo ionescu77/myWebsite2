@@ -10,7 +10,7 @@ DISQUS = False
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
-SITE_ID = 2
+SITE_ID = 1
 
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only

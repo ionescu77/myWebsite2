@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='category',
-            field=models.ForeignKey(blank=True, to='blogengine.Category', null=True),
+            field=models.ForeignKey(blank=True, to='blogengine.Category', null=True, on_delete=models.SET_NULL),
         ),
     ]
