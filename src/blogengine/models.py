@@ -38,8 +38,8 @@ class Post(models.Model):
     pub_date = models.DateTimeField()
     text = models.TextField()
     slug = models.SlugField(max_length=120, unique=True)
-    site = models.ForeignKey(Site)
-    category = models.ForeignKey(Category, blank=True, null=True)
+    site = models.ForeignKey(Site, models.PROTECT)
+    category = models.ForeignKey(Category, models.SET_NULL, blank=True, null=True)
     tags = models.ManyToManyField(Tag)
 
     def get_absolute_url(self):
