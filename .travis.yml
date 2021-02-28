@@ -9,14 +9,26 @@ python:
 services:
     - postgresql
 
-env:
-  global:
-    - SECRET_KEY_RAZ="test§$%§$§%"
-    - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
-  matrix:
-    - DJANGO="Django<1.12" TRAVIS_JOB_NAME="Django 1.11"
-    - DJANGO="Django<2.3" TRAVIS_JOB_NAME="Django 2.2"
-    - DJANGO="Django<3.2" TRAVIS_JOB_NAME="Django 3.1"
+jobs:
+  include:
+  - name: "Django 1.11"
+    env:
+      global:
+        - SECRET_KEY_RAZ="test§$%§$§%"
+        - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
+        - DJANGO="Django<1.12" TRAVIS_JOB_NAME="Django 1.11"
+  - name: "Django 2.2"
+    env:
+      global:
+        - SECRET_KEY_RAZ="test§$%§$§%"
+        - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
+        - DJANGO="Django<2.3" TRAVIS_JOB_NAME="Django 2.2"
+  - name: "Django 3.1"
+    env:
+      global:
+        - SECRET_KEY_RAZ="test§$%§$§%"
+        - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
+        - DJANGO="Django<3.2" TRAVIS_JOB_NAME="Django 3.1"
 
 # command to install dependencies
 install:
