@@ -27,7 +27,7 @@ jobs:
         - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
         - DJANGO="Django<3.2"
   allow_failures:
-    - name: "Django 3.1 Failures permited"
+    - name: "Django 1.11 Failures permited"
 
 before_script:
     - psql -c "CREATE DATABASE travisci;" -U postgres
