@@ -30,22 +30,16 @@ jobs:
         - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
         - DJANGO="Django<3.2"
 
-# command to install dependencies
-install:
+before_script:
+    - psql -c "CREATE DATABASE travisci;" -U postgres
+
+# command to run tests
+script:
     - pip install "$DJANGO"
     # exclude Django from requirements
     - sed -i '/^Django==/d' requirements/base.txt
     - pip install -r requirements/test.txt
-
-matrix:
-  fast_finish: true
-
-before_script:
-    - psql -c "CREATE DATABASE travisci;" -U postgres
     - cd src; python manage.py makemigrations; python manage.py migrate
-
-# command to run tests
-script:
     - coverage run --include="blogengine/*" --omit="blogengine/migrations/*" manage.py test blogengine
 
 after_success:
