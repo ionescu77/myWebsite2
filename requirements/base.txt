@@ -12,7 +12,7 @@ chardet==3.0.4
 
 docopt==0.6.2
 
-feedparser==5.2.1
+feedparser==6.0.2
 idna==2.10
 markdown2==2.4.0
 Pygments==2.8.0
