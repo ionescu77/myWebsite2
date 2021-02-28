@@ -21,6 +21,7 @@ jobs:
         - SECRET_KEY_RAZ="test§$%§$§%"
         - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
         - DJANGO="Django<2.3"
+  allow_failures:
   - name: "Django 3.1"
     env:
         - SECRET_KEY_RAZ="test§$%§$§%"
@@ -41,4 +42,5 @@ script:
     - coverage run --include="blogengine/*" --omit="blogengine/migrations/*" manage.py test blogengine
 
 after_success:
-    coveralls
+    - coverage run --include="blogengine/*" --omit="blogengine/migrations/*" manage.py test blogengine
+    - coveralls
