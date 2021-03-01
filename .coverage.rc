@@ -1,8 +1,10 @@
 [run]
 source=
+    .
     ./src/blogengine/*
     ./src/accounts/*
 
 omit=
     */venv/*
+    */virtualenv/*
     */migrations/*
