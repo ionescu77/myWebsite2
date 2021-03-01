@@ -43,7 +43,7 @@ script:
     - sed -i '/^Django==/d' requirements/base.txt
     - pip install -r requirements/test.txt
     - cd src; python manage.py makemigrations; python manage.py migrate
-    - manage.py test blogengine accounts
+    - python manage.py test blogengine accounts
 
 after_success:
     - coverage run --include="blogengine/*" --omit="blogengine/migrations/*" manage.py test blogengine
