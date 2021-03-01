@@ -12,7 +12,7 @@ from .forms import UserLoginForm
 
 def login_view(request):
     title = "Login"
-    next_page = request.GET['next']
+    next_page = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
     if form.is_valid():
        username = form.cleaned_data.get("username")
@@ -37,6 +37,6 @@ def register_view(request):
     return render(request, "auth_form.html", {})
 
 def logout_view(request):
-    next_page = request.GET['next']
+    next_page = request.GET.get('next')
     logout(request)
     return HttpResponseRedirect(next_page)
