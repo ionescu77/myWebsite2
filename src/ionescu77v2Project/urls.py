@@ -31,7 +31,8 @@ urlpatterns = [
     # Accounts page URLs
     #url(r'^$', include('accounts.urls', namespace='accounts')),
     # Accounts login page URLs
-#    url(r'^mylogin/$', axes_dispatch(login_view), name="mylogin"),
+    #    url(r'^mylogin/$', axes_dispatch(login_view), name="mylogin"),
+    # path(r'^mylogin/$', axes_dispatch(login_view), name="mylogin"),
     path('mylogin/', login_view, name="mylogin"),
 
     # Accounts logout page URLs
