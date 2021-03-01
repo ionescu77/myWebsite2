@@ -6,6 +6,8 @@ include =
     accounts/*
 
 omit =
+    # omit site-packages
+    */site-packages/*
     # omit anything in a .local directory anywhere
     */.local/*
     # omit everything in /migrations
