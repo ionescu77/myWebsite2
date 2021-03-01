@@ -5,6 +5,6 @@ source=
     ./src/accounts/*
 
 omit=
-    */venv/*
-    */virtualenv/*
-    */migrations/*
+    venv/*
+    virtualenv/*
+    migrations/*
