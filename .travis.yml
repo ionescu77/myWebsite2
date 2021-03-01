@@ -46,5 +46,6 @@ script:
     - python manage.py test blogengine accounts
 
 after_success:
+    - coverage run --include="blogengine/*,accounts/*" --omit="*/migrations/*" manage.py test blogengine accounts
     - coverage run manage.py test blogengine accounts
     - coveralls
