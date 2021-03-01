@@ -1,14 +1,14 @@
 # myWebsite2
 
 ![Python](https://img.shields.io/badge/Python-3.6.8-blue)
-![Django](https://img.shields.io/badge/Django-1.11.28-blue)
-![Postgresql](https://img.shields.io/badge/Postgresql-9.6-blue)
+![Django](https://img.shields.io/badge/Django-2.2.18-blue)
+![Postgresql](https://img.shields.io/badge/Postgresql-10.6-blue)
 [![Build Status](https://travis-ci.com/ionescu77/myWebsite2.svg)](https://travis-ci.com/ionescu77/myWebsite2)
 [![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=master)
 
 ## About
 
-myWebsite2 is myWebsite upgraded & migrated to django ~1.11.16~ 1.11.28 and python 3.6.7 (thanks @alexinntekt)
+myWebsite2 is myWebsite upgraded & migrated to django ~1.11.16~ 2.2.19 and python 3.6.7 (thanks @alexinntekt, @ionescu77)
 
 [you can also find the old read.me below]
 
@@ -47,7 +47,7 @@ python3 src/manage.py jenkins --enable-coverage --coverage-format html blogengin
 Run tests locally with jenkins (django style does not work anymore)
 
 ```
-python3 src/manage.py jenkins blogengine
+python3 src/manage.py jenkins blogengine accounts
 ```
 20181120
 
