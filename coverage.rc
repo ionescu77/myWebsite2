@@ -1,0 +1,14 @@
+[run]
+include =
+    # blogengine
+    blogengine/*
+    # accounts
+    accounts/*
+
+omit =
+    # omit anything in a .local directory anywhere
+    */.local/*
+    # omit everything in /migrations
+    */migrations/*
+    # omit this single file
+    utils/tirefire.py
