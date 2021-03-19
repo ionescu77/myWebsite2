@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='site',
-            field=models.ForeignKey(default=1, to='sites.Site'),
+            field=models.ForeignKey(default=1, to='sites.Site', on_delete=models.PROTECT),
             preserve_default=False,
         ),
     ]

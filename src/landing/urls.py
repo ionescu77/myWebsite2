@@ -1,4 +1,4 @@
-from django.conf.urls import include, url
+from django.urls import path, include
 
 from django.views.generic import TemplateView
 
@@ -6,5 +6,5 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     # Index Landing
-    url(r'', TemplateView.as_view(template_name='landing.html'), name='landing'),
+    path('', TemplateView.as_view(template_name='landing.html'), name='landing'),
 ]

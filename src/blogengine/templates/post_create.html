@@ -1,12 +1,14 @@
-{% extends "includes/base.html" %}
+{% extends "blog_base.html" %}
 {% load crispy_forms_tags %}
 
     {% load custom_markdown %}
+
     {% block title %} Create Post Form {% endblock %}
+
     {% block header %}
-        <div class="header">
-            <h1><code>Create Post</code></h1>
-        </div>
+        {% with title="Create Post"  %}
+            {{ block.super }}
+        {% endwith%}
     {% endblock %}
 
     {% block content %}
