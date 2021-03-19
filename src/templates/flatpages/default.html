@@ -3,9 +3,13 @@
   {% load custom_markdown %}
 
   {% block header %}
-      <div class="header">
-          <h1><code>{{ flatpage.title }}</code></h1>
-      </div>
+    <div class="container-fluid default-header">
+        <div class="header-caption background-caption">
+            <div class="header">
+                <h1><code>{{ flatpage.title }}</code></h1>
+            </div>
+        </div><!-- /.carousel-caption -->
+    </div>
   {% endblock %}
 
     {% block content %}

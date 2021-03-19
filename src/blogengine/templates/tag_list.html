@@ -1,11 +1,11 @@
-{% extends "includes/base.html" %}
+{% extends "blog_base.html" %}
 
   {% load custom_markdown %}
 
   {% block header %}
-      <div class="header">
-          <h1><code>Tags</code></h1>
-      </div>
+      {% with title="Tags"  %}
+          {{ block.super }}
+      {% endwith%}
   {% endblock %}
 
     {% block content %}
