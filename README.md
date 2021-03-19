@@ -64,13 +64,14 @@ Am zis să public codul poate asta mă motivează să îi dau bice și să înce
 
 
 #Future sprints
-- adaugare Disqus pentru comentarii [Completed](https://github.com/ionescu77/myWebsite/issues/12)
-- adăugare formular de contact
-- css pt social icons
-- code refactoring
-- django i18n & localizare RO, DE, EN
-- image credit
-- CDN și alternativă la CDN pt boostrap, jquery
-- publicare automată bookmark-uri folosind evernote API
-- publicare imagini în articolele de blog
-- optimizare SEO, meta și Structured Data Markup - schema.org
+- [x] adaugare Disqus pentru comentarii [Completed](https://github.com/ionescu77/myWebsite/issues/12)
+- [ ] adăugare formular de contact
+- [x] css pt social icons
+- [ ] code refactoring
+- [ ] django i18n & localizare RO, DE, EN
+- [x] image credit
+- [ ] CDN și alternativă la CDN pt boostrap, jquery
+- [ ] publicare automată bookmark-uri folosind evernote API
+- [ ] publicare imagini în articolele de blog
+- [ ] optimizare SEO, meta și Structured Data Markup - schema.org
+- [ ] migrare la Wagtail, care rezolva si din punctele de mai sus: i18n, imagini, seo
