@@ -14,11 +14,11 @@ services:
 
 jobs:
   include:
-  - name: "Django 1.11"
-    env:
-        - SECRET_KEY_RAZ="test§$%§$§%"
-        - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
-        - DJANGO="Django<1.12"
+  # - name: "Django 1.11"
+  #   env:
+  #       - SECRET_KEY_RAZ="test§$%§$§%"
+  #       - DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.travis"
+  #       - DJANGO="Django<1.12"
   - name: "Django 2.2"
     env:
         - SECRET_KEY_RAZ="test§$%§$§%"
