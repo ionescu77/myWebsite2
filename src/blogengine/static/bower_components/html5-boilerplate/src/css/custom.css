@@ -1,3 +1,7 @@
+div.codehilite pre {
+    background-color: #ddd;
+}
+
 body {
     color: #fff;
     background-color: #010101;
