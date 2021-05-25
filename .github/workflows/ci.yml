@@ -70,6 +70,11 @@ jobs:
       - name: Run Test # running tests
         run: python src/manage.py test blogengine accounts
 
+      - name: Publish to coveralls.io
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ github.token }}
+
       - uses: act10ns/slack@v1  # post workflow status to slack
         with:
           status: ${{ job.status }}
