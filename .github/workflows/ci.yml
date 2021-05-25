@@ -75,9 +75,10 @@ jobs:
           coverage run --include=accounts/* --omit=accounts/migrations/* src/manage.py test accounts
 
       - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          coveralls --service=github
 
       - uses: act10ns/slack@v1  # post workflow status to slack
         with:
