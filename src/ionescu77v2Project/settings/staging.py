@@ -1,5 +1,5 @@
 import os
-from .base import *
+from .base import *  # skipcq: PYL-W0614
 
 if 'TEST' in os.environ:
     SECRET_KEY=os.environ['SECRET_KEY_RAZ']
