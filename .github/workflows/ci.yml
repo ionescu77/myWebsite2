@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest # os for running the job
     env: # Django Settings + Slack Webhook
       SECRET_KEY_RAZ: test§$%§$§%
-      DJANGO_SETTINGS_MODULE: ionescu77v2Project.settings.travis
+      DJANGO_SETTINGS_MODULE: ionescu77v2Project.settings.test
       DATABASE_NAME: github-actions
       DATABASE_USER: postgres
       DATABASE_PASSWORD: postgres
@@ -71,8 +71,7 @@ jobs:
 
       - name: Run Unit Tests  # running tests
         run: |
-          coverage run --include=blogengine/* --omit=blogengine/migrations/* src/manage.py test blogengine
-          coverage run --include=accounts/* --omit=accounts/migrations/* src/manage.py test accounts
+          coverage run src/manage.py test
 
       - name: Coveralls
         env:
@@ -80,12 +79,12 @@ jobs:
         run: |
           coveralls --service=github
 
-      - uses: act10ns/slack@v1  # post workflow status to slack
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#ionescu77website'
-        if: always()
+      # - uses: act10ns/slack@v1  # post workflow status to slack
+      #   with:
+      #     status: ${{ job.status }}
+      #     steps: ${{ toJson(steps) }}
+      #     channel: '#ionescu77website'
+      #   if: always()
 
   coveralls_finish:
       needs: health-check-job

@@ -3,8 +3,8 @@
 ![Python](https://img.shields.io/badge/Python-3.6.8-blue)
 ![Django](https://img.shields.io/badge/Django-2.2.18-blue)
 ![Postgresql](https://img.shields.io/badge/Postgresql-10.6-blue)
-[![Build Status](https://travis-ci.com/ionescu77/myWebsite2.svg)](https://travis-ci.com/ionescu77/myWebsite2)
-[![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=master)
+![Build Status](https://github.com/ionescu77/myWebsite2/actions/workflows/ci.yml/badge.svg?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=develop)
 
 ## About
 
