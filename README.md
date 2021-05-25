@@ -4,6 +4,7 @@
 ![Django](https://img.shields.io/badge/Django-2.2.18-blue)
 ![Postgresql](https://img.shields.io/badge/Postgresql-10.6-blue)
 ![Build Status](https://github.com/ionescu77/myWebsite2/actions/workflows/ci.yml/badge.svg?branch=develop)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/912a3e65b4fc4a4a892332a152fb8e5b)](https://app.codacy.com/gh/ionescu77/myWebsite2?utm_source=github.com&utm_medium=referral&utm_content=ionescu77/myWebsite2&utm_campaign=Badge_Grade_Settings)
 [![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=develop)
 
 ## About
