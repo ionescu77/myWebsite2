@@ -24,6 +24,7 @@ jobs:
       DATABASE_USER: postgres
       DATABASE_PASSWORD: postgres
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      GITHUB_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }} # Set token for Coveralls
     services:
       postgres: # we need a postgres docker image to be booted a side car service to run the tests that needs a db
         image: postgres:10
