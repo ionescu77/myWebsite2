@@ -73,11 +73,10 @@ jobs:
           coverage run --include=blogengine/* --omit=blogengine/migrations/* src/manage.py test blogengine
           coverage run --include=accounts/* --omit=accounts/migrations/* src/manage.py test accounts
 
-      - name: Upload coverage data to coveralls.io
-        run: |
-          coveralls --service=github
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: act10ns/slack@v1  # post workflow status to slack
         with:
