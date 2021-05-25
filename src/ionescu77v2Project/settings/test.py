@@ -3,6 +3,8 @@ from .base import *  # skipcq: PYL-W0614
 
 SECRET_KEY=os.environ['SECRET_KEY_RAZ']
 
+TEST = True
+
 DEBUG = True
 # TEMPLATE_DEBUG = True # Deprecated see below TEMPLATES:
 DISQUS = False
