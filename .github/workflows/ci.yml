@@ -67,8 +67,14 @@ jobs:
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Migrations # run migrations to create table in side car db container
         run: python src/manage.py migrate
-      - name: Run Test # running tests
-        run: python src/manage.py test blogengine accounts
+#      - name: Run Test # running tests
+#        run: python src/manage.py test blogengine accounts
+
+      - name: Coveralls
+        uses: AndreMiras/coveralls-python-action@develop
+        with:
+          parallel: true
+          flag-name: Unit Test
 
       - name: Publish to coveralls.io
         uses: coverallsapp/github-action@v1.1.2
