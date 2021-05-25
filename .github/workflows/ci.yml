@@ -88,7 +88,7 @@ jobs:
         if: always()
 
   coveralls_finish:
-      needs: test
+      needs: health-check-job
       runs-on: ubuntu-latest
       steps:
       - name: Coveralls Finished report
