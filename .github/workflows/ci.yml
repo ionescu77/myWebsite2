@@ -76,7 +76,7 @@ jobs:
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: act10ns/slack@v1  # post workflow status to slack
         with:
