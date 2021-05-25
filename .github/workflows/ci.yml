@@ -71,8 +71,7 @@ jobs:
 
       - name: Run Unit Tests  # running tests
         run: |
-          coverage run --include=blogengine/* --omit=blogengine/migrations/* src/manage.py test blogengine
-          coverage run --include=accounts/* --omit=accounts/migrations/* src/manage.py test accounts
+          coverage run src/manage.py test
 
       - name: Coveralls
         env:
