@@ -79,12 +79,12 @@ jobs:
         run: |
           coveralls --service=github
 
-      - uses: act10ns/slack@v1  # post workflow status to slack
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#ionescu77website'
-        if: always()
+      # - uses: act10ns/slack@v1  # post workflow status to slack
+      #   with:
+      #     status: ${{ job.status }}
+      #     steps: ${{ toJson(steps) }}
+      #     channel: '#ionescu77website'
+      #   if: always()
 
   coveralls_finish:
       needs: health-check-job
