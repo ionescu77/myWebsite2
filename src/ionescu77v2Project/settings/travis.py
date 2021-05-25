@@ -14,9 +14,6 @@ SITE_ID = 1
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only
 
-INSTALLED_APPS += ('django_jenkins',)
-JENKINS_TASKS = ()
-
 PROJECT_APPS = ['blogengine']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
