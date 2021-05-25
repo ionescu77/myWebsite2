@@ -5,6 +5,7 @@
 ![Postgresql](https://img.shields.io/badge/Postgresql-10.6-blue)
 ![Build Status](https://github.com/ionescu77/myWebsite2/actions/workflows/ci.yml/badge.svg?branch=develop)
 [![Coverage Status](https://coveralls.io/repos/github/ionescu77/myWebsite2/badge.svg?branch=master)](https://coveralls.io/github/ionescu77/myWebsite2?branch=develop)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/be6b62fc78134fe0998e0c3321372197)](https://www.codacy.com/gh/ionescu77/myWebsite2/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ionescu77/myWebsite2&amp;utm_campaign=Badge_Grade)
 
 ## About
 
