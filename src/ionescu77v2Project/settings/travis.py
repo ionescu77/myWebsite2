@@ -1,5 +1,5 @@
 import os
-from .base import *
+from .base import *  # skipcq: PYL-W0614
 
 SECRET_KEY=os.environ['SECRET_KEY_RAZ']
 
@@ -13,9 +13,6 @@ SITE_ID = 1
 
 #TEST_DATABASE_CHARSET=UTF8
 #CHARSET=UTF8 # supported for PG and MySQL only
-
-INSTALLED_APPS += ('django_jenkins',)
-JENKINS_TASKS = ()
 
 PROJECT_APPS = ['blogengine']
 
