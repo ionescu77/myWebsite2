@@ -68,22 +68,16 @@ jobs:
       - name: Run Migrations # run migrations to create table in side car db container
         run: python src/manage.py migrate
 
-      - name: Run Unit Tests Blogengine # running tests
-        run: coverage run --include=blogengine/* --omit=blogengine/migrations/* src/manage.py test blogengine
+      - name: Run Unit Tests  # running tests
+        run: |
+          coverage run --include=blogengine/* --omit=blogengine/migrations/* src/manage.py test blogengine
+          coverage run --include=accounts/* --omit=accounts/migrations/* src/manage.py test accounts
 
-      - name: Run Unit Tests Accounts # running tests
-        run: coverage run --include=accounts/* --omit=accounts/migrations/* src/manage.py test accounts
-
-      - name: Coveralls
-        uses: AndreMiras/coveralls-python-action@develop
-        with:
-          parallel: true
-          flag-name: Unit Test
-
-      - name: Publish to coveralls.io
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ github.token }}
+      - name: Upload coverage data to coveralls.io
+        run: |
+          coveralls --service=github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: act10ns/slack@v1  # post workflow status to slack
         with:
