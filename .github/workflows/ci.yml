@@ -69,10 +69,10 @@ jobs:
         run: python src/manage.py migrate
 
       - name: Run Unit Tests Blogengine # running tests
-        run: coverage run --include=blogengine/* --omit=blogengine/migrations/* manage.py test blogengine
+        run: coverage run --include=blogengine/* --omit=blogengine/migrations/* src/manage.py test blogengine
 
       - name: Run Unit Tests Accounts # running tests
-        run: coverage run --include=accounts/* --omit=accounts/migrations/* manage.py test accounts
+        run: coverage run --include=accounts/* --omit=accounts/migrations/* src/manage.py test accounts
 
       - name: Coveralls
         uses: AndreMiras/coveralls-python-action@develop
