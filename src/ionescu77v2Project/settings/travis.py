@@ -1,5 +1,5 @@
 import os
-from .base import *
+from .base import * # skipcq: PYL-W0614
 
 SECRET_KEY=os.environ['SECRET_KEY_RAZ']
 
