@@ -69,9 +69,13 @@ jobs:
       - name: Run Migrations # run migrations to create table in side car db container
         run: python src/manage.py migrate
 
-      - name: Run Unit Tests  # running tests
+      - name: Run Unit Tests  blogengine # running tests
         run: |
-          coverage run src/manage.py test
+          coverage run src/manage.py test blogengine
+
+      - name: Run Unit Tests accounts # running tests
+        run: |
+          coverage run src/manage.py test accounts
 
       - name: Coveralls
         env:
