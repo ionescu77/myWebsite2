@@ -18,7 +18,7 @@ docopt==0.6.2
 feedparser==6.0.8
 idna
 markdown2==2.4.2
-Pygments==2.11.2
+Pygments==2.12.0
 python-dateutil==2.8.2
 pytz==2022.1
 requests
