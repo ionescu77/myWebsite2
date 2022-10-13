@@ -29,13 +29,25 @@ urlpatterns = [
         paginate_by=5,
         model=Category,
         ), name = 'category_list'),
+    # Categories - Posts List by Category by page
+    path(r'category/<slug:slug>/<int:page>/',
+         CategoryListView.as_view(
+             paginate_by=5,
+             model=Category,
+         ), name='category_list'),
 
     # Tags - Posts List by Tag
-    path(r'tag/<slug:slug>/',
+    path('tag/<slug:slug>/',
      TagListView.as_view(
         paginate_by=5,
         model=Tag,
         ), name = 'tag_list'),
+    # Tags - Posts List by Tag by page
+    path('tag/<slug:slug>/<int:page>/',
+         TagListView.as_view(
+             paginate_by=5,
+             model=Tag,
+         ), name='tag_list'),
 
     # Posts RSS feed
     path('feeds/posts/', PostsFeed()),
