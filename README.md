@@ -25,6 +25,10 @@ myWebsite2 is myWebsite upgraded & migrated to django ~1.11.16~ 2.2.19 and pytho
 - environment variables needed:
 
 ```bash
+# local
+export SECRET_KEY_RAZ="--some-key--"
+export DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.local"
+
 # production
 SECRET_KEY_IONESCU77="--some-key--"
 export SECRET_KEY_IONESCU77
