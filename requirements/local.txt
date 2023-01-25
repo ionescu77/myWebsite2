@@ -2,7 +2,7 @@
 
 django-jenkins==0.110.0
 factory-boy==3.2.1
-Faker==15.1.1
+Faker==16.6.1
 
 coverage==6.5.0
 coveralls==3.*
