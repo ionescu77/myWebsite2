@@ -5,15 +5,19 @@ from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blogengine', '0002_category'),
+        ("blogengine", "0002_category"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='category',
-            field=models.ForeignKey(blank=True, to='blogengine.Category', null=True, on_delete=models.SET_NULL),
+            model_name="post",
+            name="category",
+            field=models.ForeignKey(
+                blank=True,
+                to="blogengine.Category",
+                null=True,
+                on_delete=models.SET_NULL,
+            ),
         ),
     ]

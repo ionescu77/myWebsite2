@@ -5,14 +5,13 @@ from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blogengine', '0003_post_category'),
+        ("blogengine", "0003_post_category"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='category',
-            options={'verbose_name_plural': 'categories'},
+            name="category",
+            options={"verbose_name_plural": "categories"},
         ),
     ]

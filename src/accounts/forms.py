@@ -4,9 +4,10 @@ from django.contrib.auth import (
     get_user_model,
     login,
     logout,
-    )
+)
 
 User = get_user_model()
+
 
 class UserLoginForm(forms.Form):
     username = forms.CharField()
