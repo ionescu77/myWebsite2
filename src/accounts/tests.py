@@ -16,63 +16,70 @@ from django.contrib.auth.models import User
 
 # Create your tests here.
 
+
 class BaseAcceptanceTest(LiveServerTestCase):
     def setUp(self):
         self.client = Client()
 
+
 class AccountsTest(BaseAcceptanceTest):
     # We need to fill the auth database for login test
     # python manage.py dumpdata auth.User --indent=2 > blogengine/fixtures/users.json
-    fixtures = ['users.json']
+    fixtures = ["users.json"]
 
     def setUp(self):
         # Create client
         self.client = Client()
         # Create user
-        self.credentials = {
-            'username': 'abhishek',
-            'password': 'Abhishek@12345'}
+        self.credentials = {"username": "abhishek", "password": "Abhishek@12345"}
         User.objects.create_user(**self.credentials)
 
-
     def test_login(self):
-        with self.settings(AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend',]):
+        with self.settings(
+            AUTHENTICATION_BACKENDS=[
+                "django.contrib.auth.backends.ModelBackend",
+            ]
+        ):
             # Get login page
-            response = self.client.get('/mylogin/', follow=True)
+            response = self.client.get("/mylogin/", follow=True)
             # Check 'Username' in login form webpage
-            self.assertTrue(b'Username' in response.content)
+            self.assertTrue(b"Username" in response.content)
             # Check 'asteriskField' in login form webpage
-            self.assertTrue(b'asteriskField' in response.content)
+            self.assertTrue(b"asteriskField" in response.content)
             # Check 'glyphicon-lock' in webpage which means not authenticated
-            self.assertTrue(b'glyphicon-lock' in response.content)
+            self.assertTrue(b"glyphicon-lock" in response.content)
             # send login data
-            response = self.client.post('/mylogin/', self.credentials, follow=True)
+            response = self.client.post("/mylogin/", self.credentials, follow=True)
             # Check response, we need to set follow=True for redirect
             self.assertEquals(response.status_code, 200)
             # Check 'Create Post' in login webpage, means authenticated & redirected to blog
-            self.assertTrue(b'Create Post' in response.content)
+            self.assertTrue(b"Create Post" in response.content)
             # Check response code by accesing again
-            response = self.client.get('/mylogin/')
+            response = self.client.get("/mylogin/")
             self.assertEquals(response.status_code, 200)
             # Check 'Authenticated' in login form webpage
-            self.assertTrue(b'Authenticated' in response.content)
+            self.assertTrue(b"Authenticated" in response.content)
             # Check 'glyphicon-flash' in webpage which means authenticated
-            self.assertTrue(b'glyphicon-flash' in response.content)
+            self.assertTrue(b"glyphicon-flash" in response.content)
 
     def test_logout(self):
-        with self.settings(AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend',]):
+        with self.settings(
+            AUTHENTICATION_BACKENDS=[
+                "django.contrib.auth.backends.ModelBackend",
+            ]
+        ):
             # Login
-            self.client.login(username='testuser', password='test')
+            self.client.login(username="testuser", password="test")
             # Check response code
-            response = self.client.get('/mylogin/')
+            response = self.client.get("/mylogin/")
             print(response)
             self.assertEquals(response.status_code, 200)
             # Check 'glyphicon-flash' in webpage which means authenticated
-            self.assertTrue(b'glyphicon-flash' in response.content)
+            self.assertTrue(b"glyphicon-flash" in response.content)
             # # Log out
             # self.client.logout()
             # Check response code
-            response = self.client.get('/mylogout/', follow=True)
+            response = self.client.get("/mylogout/", follow=True)
             self.assertEquals(response.status_code, 200)
             # Check 'glyphicon-lock' in webpage which means not authenticated
-            self.assertTrue(b'glyphicon-lock' in response.content)
+            self.assertTrue(b"glyphicon-lock" in response.content)

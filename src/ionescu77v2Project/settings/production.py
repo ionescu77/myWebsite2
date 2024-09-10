@@ -1,8 +1,8 @@
 import os
 from .base import *  # skipcq: PYL-W0614
 
-if 'TEST' in os.environ:
-    SECRET_KEY=os.environ['SECRET_KEY_RAZ']
+if "TEST" in os.environ:
+    SECRET_KEY = os.environ["SECRET_KEY_RAZ"]
 
     # INSTALLED_APPS += ('django_jenkins',)
 
@@ -11,27 +11,28 @@ if 'TEST' in os.environ:
     #     'django_jenkins.tasks.with_coverage',
     #     )
 
-    PROJECT_APPS = ['blogengine']
+    PROJECT_APPS = ["blogengine"]
 else:
-    SECRET_KEY=os.environ['SECRET_KEY_IONESCU77']
+    SECRET_KEY = os.environ["SECRET_KEY_IONESCU77"]
 
 
 # Setup Database
 from .database_production import DATABASES
+
 DATABASES = DATABASES
 
 DEBUG = False
 # TEMPLATE_DEBUG = True # Deprecated see below TEMPLATES:
 DISQUS = True
 
-ALLOWED_HOSTS = ['ionescu77.com','www.ionescu77.com','staging.ionescu77.com']
+ALLOWED_HOSTS = ["ionescu77.com", "www.ionescu77.com", "staging.ionescu77.com"]
 
 SITE_ID = 1
 
-#TEST_DATABASE_CHARSET=UTF8
-#CHARSET=UTF8 # supported for PG and MySQL only
+# TEST_DATABASE_CHARSET=UTF8
+# CHARSET=UTF8 # supported for PG and MySQL only
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 # ///////
 # ------- django-axes: Settings for this:
