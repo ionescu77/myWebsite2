@@ -38,16 +38,16 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - name: Checkout code # checking our the code at current commit that triggers the workflow
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Cache dependency # caching dependency will make our build faster.
-        uses: actions/cache@v2 # for more info checkout pip section documentation at https://github.com/actions/cache
+        uses: actions/cache@v3 # for more info checkout pip section documentation at https://github.com/actions/cache
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements/test.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Setup python environment # setting python environment to 3.x
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.8' # if you want multiple python version run just use matrix strategy in job config. See the documentation of GitHub Actions
       - name: Check Python version # checking the python version to see if 3.x is installed.
