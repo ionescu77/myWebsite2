@@ -4,34 +4,44 @@ from django.contrib.sites.models import Site
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     slug = models.SlugField(max_length=40, unique=True, blank=True, null=True)
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
+
     def get_absolute_url(self):
-        return "/blog/category/%s/" %(self.slug)
+        return "/blog/category/%s/" % (self.slug)
+
     def __str__(self):
         return self.name
+
     class Meta:
-        verbose_name_plural = 'categories'
+        verbose_name_plural = "categories"
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     slug = models.SlugField(max_length=40, unique=True, blank=True, null=True)
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
         super(Tag, self).save(*args, **kwargs)
+
     def get_absolute_url(self):
-        return "/blog/tag/%s/" %(self.slug)
+        return "/blog/tag/%s/" % (self.slug)
+
     def __str__(self):
         return self.name
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -51,6 +61,7 @@ class Post(models.Model):
     class Meta:
         ordering = ["-pub_date"]
 
+
 def create_slug(instance, new_slug=None):
     slug = slugify(instance.title)
     if new_slug is not None:
@@ -58,7 +69,7 @@ def create_slug(instance, new_slug=None):
     qs = Post.objects.filter(slug=slug).order_by("-id")
     exists = qs.exists()
     if exists:
-        new_slug = "%s-%s" %(slug, qs.first().id)
+        new_slug = "%s-%s" % (slug, qs.first().id)
         return create_slug(instance, new_slug=new_slug)
     return slug
 
@@ -66,7 +77,6 @@ def create_slug(instance, new_slug=None):
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = create_slug(instance)
-
 
 
 pre_save.connect(pre_save_post_receiver, sender=Post)
