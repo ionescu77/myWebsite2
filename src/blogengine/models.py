@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.text import slugify
 from django.contrib.sites.models import Site
 from django.db.models.signals import pre_save
-from django.utils.text import slugify
 
 
 # Create your models here.
