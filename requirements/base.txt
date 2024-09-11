@@ -1,4 +1,4 @@
-wheel==0.38.4
+wheel==0.44.0
 
 Django==3.2.*
 django-appconf==1.0.6
