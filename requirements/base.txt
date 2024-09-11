@@ -1,4 +1,4 @@
-wheel==0.44.0
+wheel==0.44.0 # we went py38 from py36
 
 Django==3.2.*
 django-appconf==1.0.6
