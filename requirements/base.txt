@@ -20,7 +20,7 @@ idna
 markdown2==2.5.0
 Pygments==2.15.0
 python-dateutil==2.8.2
-pytz==2022.4
+pytz==2024.2
 requests
 six==1.16.0
 text-unidecode==1.3
