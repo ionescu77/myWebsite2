@@ -7,7 +7,7 @@ django-axes==5.40.1
 
 django-crispy-forms==1.14.0
 
-django-ipware==4.0.2
+django-ipware==7.0.1
 
 certifi==2024.8.30
 chardet==5.2.0
