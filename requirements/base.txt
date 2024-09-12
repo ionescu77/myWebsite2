@@ -5,7 +5,7 @@ django-appconf==1.0.6
 
 django-axes==5.40.1
 
-django-crispy-forms==1.14.0
+django-crispy-forms==2.3
 
 django-ipware==7.0.1
 
