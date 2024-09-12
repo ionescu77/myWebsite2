@@ -19,7 +19,7 @@ feedparser==6.0.11
 idna
 markdown2==2.5.0
 Pygments==2.18.0
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
 pytz==2024.2
 requests
 six==1.16.0
