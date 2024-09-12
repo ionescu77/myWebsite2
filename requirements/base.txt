@@ -3,7 +3,7 @@ wheel==0.44.0 # we went py38 from py36
 Django==3.2.*
 django-appconf==1.0.6
 
-django-axes==5.40.1
+django-axes==6.5.1
 
 django-crispy-forms==1.14.0
 
