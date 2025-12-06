@@ -13,82 +13,75 @@ on:
       - develop
 
 
-# three job definition
+# job definitions
 jobs:
-  health-check-job: # health check job for testing and code formatting check
-    runs-on: ubuntu-latest # os for running the job
-    env: # Django Settings + Slack Webhook
+  django-matrix-test: # Matrix testing for multiple Django versions
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Test Django 3.2 (current) with Python 3.8 - REQUIRED TO PASS
+          - python-version: '3.8'
+            django-version: 'django32'
+            tox-env: 'py38-django32'
+            continue-on-error: false
+          # Test Django 4.2 (current LTS) with Python 3.10 - INFORMATIONAL ONLY
+          - python-version: '3.10'
+            django-version: 'django42'
+            tox-env: 'py310-django42'
+            continue-on-error: true
+          # Test Django 5.2 (future LTS) with Python 3.12 - INFORMATIONAL ONLY
+          - python-version: '3.12'
+            django-version: 'django52'
+            tox-env: 'py312-django52'
+            continue-on-error: true
+    continue-on-error: ${{ matrix.continue-on-error }}
+    env:
       SECRET_KEY_RAZ: test§$%§$§%
       DJANGO_SETTINGS_MODULE: ionescu77v2Project.settings.test
       DATABASE_NAME: github-actions
       DATABASE_USER: postgres
       DATABASE_PASSWORD: postgres
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      GITHUB_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }} # Set token for Coveralls
     services:
-      postgres: # we need a postgres docker image to be booted a side car service to run the tests that needs a db
+      postgres:
         image: postgres:10
-        env: # the environment variable must match with app/settings.py if block of DATBASES variable otherwise test will fail due to connectivity issue.
+        env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: github-actions
         ports:
-          - 5432:5432 # exposing 5432 port for application to use
-        # needed because the postgres container does not provide a healthcheck
+          - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
-      - name: Checkout code # checking our the code at current commit that triggers the workflow
+      - name: Checkout code
         uses: actions/checkout@v3
-      - name: Cache dependency # caching dependency will make our build faster.
-        uses: actions/cache@v3 # for more info checkout pip section documentation at https://github.com/actions/cache
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements/test.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-      - name: Setup python environment # setting python environment to 3.x
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
-          python-version: '3.8.13' # if you want multiple python version run just use matrix strategy in job config. See the documentation of GitHub Actions
-      - name: Check Python version # checking the python version to see if 3.x is installed.
-        run: python --version
-      - name: Upgrade pip
-        run: pip install --upgrade pip
-      - name: Install requirements # install application requirements
-        run: pip install -r requirements/test.txt
-      # - name: Check Syntax # check code formatting
-      #   run: pycodestyle --statistics .
-#      - name: Wemake Python Stylguide
-#        uses: wemake-services/wemake-python-styleguide@0.14.1
-#        continue-on-error: true
-#        with:
-#          # 'github-pr-review', 'github-pr-check', 'terminal'
-#          reporter: 'terminal'      # remove pr-review, to many API calls to many warnings
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run Migrations # run migrations to create table in side car db container
-        run: python src/manage.py migrate
-
-      - name: Run Unit Tests  blogengine # running tests
+          python-version: ${{ matrix.python-version }}
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ matrix.django-version }}-${{ hashFiles('**/requirements/test.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ matrix.django-version }}-
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
+            ${{ runner.os }}-pip-
+      - name: Install tox
         run: |
-          coverage run src/manage.py test blogengine
-
-      - name: Run Unit Tests accounts # running tests
-        run: |
-          coverage run src/manage.py test accounts
-
-      - name: Coveralls
+          python -m pip install --upgrade pip
+          pip install tox
+      - name: Run tests with tox for Django ${{ matrix.django-version }}
+        run: tox -e ${{ matrix.tox-env }}
+      - name: Upload coverage to Coveralls
+        if: matrix.tox-env == 'py38-django32'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          pip install coveralls
           coveralls --service=github
-
-      # - uses: act10ns/slack@v1  # post workflow status to slack
-      #   with:
-      #     status: ${{ job.status }}
-      #     steps: ${{ toJson(steps) }}
-      #     channel: '#ionescu77website'
-      #   if: always()
 
   coveralls_finish:
       needs: health-check-job
