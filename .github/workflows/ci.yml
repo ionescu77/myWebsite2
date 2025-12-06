@@ -17,6 +17,8 @@ on:
 jobs:
   django-matrix-test: # Matrix testing for multiple Django versions
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       fail-fast: false
       matrix:
@@ -86,6 +88,8 @@ jobs:
   coveralls_finish:
       needs: django-matrix-test
       runs-on: ubuntu-latest
+      permissions:
+        contents: read
       steps:
       - name: Coveralls Finished report
         uses: AndreMiras/coveralls-python-action@develop
