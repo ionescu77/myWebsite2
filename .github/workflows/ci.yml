@@ -85,6 +85,17 @@ jobs:
           pip install coveralls
           coveralls --service=github
 
+  # Compatibility job to maintain existing branch protection rules
+  # This job has the same name as the old workflow job
+  health-check-job:
+      needs: django-matrix-test
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+      steps:
+      - name: All matrix tests completed
+        run: echo "All Django matrix tests have completed successfully"
+
   coveralls_finish:
       needs: django-matrix-test
       runs-on: ubuntu-latest
