@@ -84,7 +84,7 @@ jobs:
           coveralls --service=github
 
   coveralls_finish:
-      needs: health-check-job
+      needs: django-matrix-test
       runs-on: ubuntu-latest
       steps:
       - name: Coveralls Finished report
