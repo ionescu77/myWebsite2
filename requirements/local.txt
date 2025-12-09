@@ -1,7 +1,7 @@
 -r base.txt
 
 django-jenkins==0.110.0
-factory-boy==3.3.1
+factory-boy==3.3.3
 Faker==28.4.1
 
 coverage==7.6.9
