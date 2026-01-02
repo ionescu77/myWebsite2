@@ -118,7 +118,7 @@ USE_TZ = True
 #
 INSTALLED_APPS += (
     "landing",
-    "blogengine",
+    "blogengine.apps.BlogengineConfig",
     "accounts",
     "django.contrib.sites",
     "django.contrib.flatpages",
