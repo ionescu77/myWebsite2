@@ -40,6 +40,24 @@ DB_PORT_IONESCU77="--some-db-port--"
 export DB_NAME_IONESCU77 DB_USER_IONESCU77 DB_PASS_IONESCU77 DB_PORT_IONESCU77
 ```
 
+## Testing
+
+This project uses tox for testing across multiple Django versions. For detailed information about running tests and the Django matrix testing strategy, see [TESTING.md](TESTING.md).
+
+Quick start:
+```bash
+# Install tox
+pip install tox
+
+# Run all matrix tests
+tox
+
+# Run tests for specific Django version
+tox -e py38-django32   # Django 3.2 (current)
+tox -e py310-django42  # Django 4.2 (current LTS)
+tox -e py312-django52  # Django 5.2 (future LTS)
+```
+
 # myWebsite
 
 #Notes to (mainly) myself:
