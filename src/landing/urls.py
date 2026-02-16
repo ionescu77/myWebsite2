@@ -10,5 +10,9 @@ urlpatterns = [
     # About page
     path("about/", TemplateView.as_view(template_name="about.html"), name="about"),
     # Services page
-    path("services/", TemplateView.as_view(template_name="services.html"), name="services"),
+    path(
+        "services/",
+        TemplateView.as_view(template_name="services.html"),
+        name="services",
+    ),
 ]
