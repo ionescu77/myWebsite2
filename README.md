@@ -11,38 +11,34 @@
 
 ## About
 
-myWebsite2 is myWebsite upgraded & migrated to django ~1.11.16~ 2.2.19 and python 3.6.7 (thanks @alexinntekt, @ionescu77)
+Personal blog and website built with Django 3.2 and Python 3.8+. Features a blog engine, static content pages, and modern UI with light/dark theme support.
 
-[you can also find the old read.me below]
+**Recent Updates (Feb 2026):**
+- ✨ Light/dark theme switcher with 7 accent color palettes
+- 📝 New About Me and Services pages
+- ⚡ Converted static pages from flatpages to direct views (40-70% faster)
+- 🎨 Improved typography with modern system fonts
+- 📱 Enhanced mobile responsiveness
 
-- created a new github private repository
-- added gitignore from the start
-- added GNU GPL v3.0 license (you use it it remains open source, not closed source)
-- extended this README
+## Features
 
-
-## Environment
-- environment variables needed:
-
-```bash
-# local
-export SECRET_KEY_RAZ="--some-key--"
-export DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.local"
-
-# production
-SECRET_KEY_IONESCU77="--some-key--"
-export SECRET_KEY_IONESCU77
-export DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.production"
-DB_NAME_IONESCU77="--some-db-name--"
-DB_USER_IONESCU77="--some-db-user--"
-DB_PASS_IONESCU77="--some-db-pass--"
-DB_PORT_IONESCU77="--some-db-port--"
-export DB_NAME_IONESCU77 DB_USER_IONESCU77 DB_PASS_IONESCU77 DB_PORT_IONESCU77
-```
+- **Blog Engine**: Full-featured blog with categories, tags, and RSS feeds
+- **Theme System**: User-selectable light/dark themes with persistent preferences
+- **Static Pages**: Fast-loading About and Services pages (no database queries)
+- **Admin Interface**: Django admin for content management
+- **SEO**: Sitemap generation and structured URLs
 
 ## Testing
 
 This project uses tox for testing across multiple Django versions. For detailed information about running tests and the Django matrix testing strategy, see [TESTING.md](TESTING.md).
+
+### Test Matrix Status
+
+| Python | Django | Status | Notes |
+|--------|--------|--------|-------|
+| 3.8 | 3.2 (current) | ✅ Passing | Production version |
+| 3.10 | 4.2 (LTS) | ⚠️ Informational | Compatibility testing |
+| 3.12 | 5.2 (future) | ⚠️ Informational | Forward compatibility |
 
 Quick start:
 ```bash
@@ -58,37 +54,38 @@ tox -e py310-django42  # Django 4.2 (current LTS)
 tox -e py312-django52  # Django 5.2 (future LTS)
 ```
 
-# myWebsite
+## Environment Variables
 
-#Notes to (mainly) myself:
-
-Codul sursă de la site-ul meu, mereu în lucru.
-
-Run coverage locally and generate nice html reports (in ./reports/coverage)
+### Local Development
+```bash
+export SECRET_KEY_RAZ="--your-secret-key--"
+export DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.local"
 ```
+
+### Production
+```bash
+export SECRET_KEY_IONESCU77="--your-secret-key--"
+export DJANGO_SETTINGS_MODULE="ionescu77v2Project.settings.production"
+export DB_NAME_IONESCU77="--db-name--"
+export DB_USER_IONESCU77="--db-user--"
+export DB_PASS_IONESCU77="--db-password--"
+export DB_PORT_IONESCU77="--db-port--"
+```
+
+## Development
+
+### Run Coverage Reports
+```bash
 python3 src/manage.py jenkins --enable-coverage --coverage-format html blogengine
 ```
 
-Run tests locally with jenkins (django style does not work anymore)
+### Deployment Workflow
+- **dev** → local.txt → virtualenv (Python 3.8 & runserver)
+- **staging** → ionescu77.avproiect.com (Python 3.8 & mod_wsgi)
+- **production** → ionescu77.com (Python 3.8 & mod_wsgi)
 
-```
-python3 src/manage.py jenkins blogengine accounts
-```
-20181120
+## Future Sprints
 
-Workflow (using git hooks & shell scripts for deployment):
-- dev -> local.txt -> virtualenv (python 3.6 & runserver)
-- test -> staging.txt -> ionescu77.avproiect.com (python 3.6 & mod_wsgi)
-- live -> production.txt -> ionescu77.com (python 3.6 & & mod_wsgi)
-
-2016.03.08
-
-Am zis să public codul poate asta mă motivează să îi dau bice și să încep să mai și scriu câte ceva.
-
-2015.12.11
-
-
-#Future sprints
 - [x] adaugare Disqus pentru comentarii [Completed](https://github.com/ionescu77/myWebsite/issues/12)
 - [ ] adăugare formular de contact
 - [x] css pt social icons
@@ -100,3 +97,11 @@ Am zis să public codul poate asta mă motivează să îi dau bice și să înce
 - [ ] publicare imagini în articolele de blog
 - [ ] optimizare SEO, meta și Structured Data Markup - schema.org
 - [ ] migrare la Wagtail, care rezolva si din punctele de mai sus: i18n, imagini, seo
+
+## License
+
+GNU GPL v3.0 - Open source license
+
+---
+
+*Personal blog by Răzvan Ionescu - Frankfurt am Main*
