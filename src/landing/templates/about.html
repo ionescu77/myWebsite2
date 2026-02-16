@@ -1,0 +1,188 @@
+{% extends "includes/base.html" %}
+
+{% load custom_markdown %}
+
+{% block header %}
+  <div class="container-fluid default-header">
+      <div class="header-caption background-caption">
+          <div class="header">
+              <h1><code>About Me</code></h1>
+          </div>
+      </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="col-lg-10 col-lg-offset-1">
+    <article class="about-content">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <h2>Răzvan Ionescu</h2>
+            <p class="lead">Integration Engineer | Technology Consultant | Cultural Philosopher</p>
+            
+            <p>
+                With over 25 years of enterprise IT experience and the last decade as a freelance Integration Engineer, 
+                I bring deep technical expertise combined with a unique philosophical perspective to technology consulting 
+                and cultural analysis.
+            </p>
+        </section>
+
+        <!-- Professional Journey -->
+        <section class="journey-section">
+            <h3>Professional Journey</h3>
+            <p>
+                My career spans more than two decades in enterprise technology, where I've specialized in integration 
+                engineering, system architecture, and digital transformation. Since 2015, I've been working as a 
+                freelance consultant, helping organizations bridge the gap between complex technical systems and 
+                business objectives.
+            </p>
+            <p>
+                Currently based in Frankfurt am Main, Germany, I work with clients across Europe, delivering solutions 
+                that combine technical excellence with strategic thinking.
+            </p>
+        </section>
+
+        <!-- Education & Interests -->
+        <section class="education-section">
+            <h3>Education & Continuous Learning</h3>
+            <p>
+                I believe in lifelong learning and interdisciplinary thinking. My academic pursuits reflect this philosophy:
+            </p>
+            <ul>
+                <li><strong>Master's in Analytic Philosophy</strong> (currently in final semester) - Exploring the intersection 
+                of logic, language, and technology</li>
+                <li><strong>Master's in Cultural Management</strong> (completed 2015) - Understanding culture, art, and 
+                organizational dynamics</li>
+                <li><strong>25+ years in Enterprise IT</strong> - Practical experience across diverse industries and technologies</li>
+            </ul>
+        </section>
+
+        <!-- What I Write About -->
+        <section class="writing-section">
+            <h3>What I Write About</h3>
+            <p>
+                This blog serves as a platform to explore the convergence of technology, culture, philosophy, and art. 
+                You'll find posts on:
+            </p>
+            <ul>
+                <li><strong>Technology & Engineering</strong> - Integration patterns, system architecture, best practices</li>
+                <li><strong>Philosophy & Critical Thinking</strong> - Analytic philosophy, logic, epistemology</li>
+                <li><strong>Culture & Art</strong> - Cultural analysis, photography, artistic expression</li>
+                <li><strong>Life & Work</strong> - Reflections on freelancing, consulting, and work-life balance</li>
+            </ul>
+        </section>
+
+        <!-- Personal -->
+        <section class="personal-section">
+            <h3>Beyond Work</h3>
+            <p>
+                Photography is my passion—particularly landscape photography. The images you see on this site, including 
+                the Frankfurt skyline, come from my personal collection. I find that the patience and perspective 
+                required for photography complement the analytical thinking needed for technology consulting.
+            </p>
+            <p>
+                At 49, I'm at a stage where I can combine decades of practical experience with fresh academic insights, 
+                offering a unique perspective on both technology and culture.
+            </p>
+        </section>
+
+        <!-- Connect -->
+        <section class="connect-section">
+            <h3>Let's Connect</h3>
+            <p>
+                I'm always interested in engaging with people who share interests in technology, philosophy, culture, or art. 
+                Whether you're looking for consulting services, want to discuss ideas, or simply connect, feel free to reach out.
+            </p>
+            <div class="social-links">
+                <ul class="list-inline">
+                    <li><a href="https://de.linkedin.com/in/ionescu77" class="btn btn-default">
+                        <i class="fa fa-linkedin"></i> LinkedIn
+                    </a></li>
+                    <li><a href="https://github.com/ionescu77" class="btn btn-default">
+                        <i class="fa fa-github"></i> GitHub
+                    </a></li>
+                    <li><a href="mailto:razvi_98@yahoo.com?subject=Contact from ionescu77.com" class="btn btn-default">
+                        <i class="fa fa-envelope"></i> Email
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+    </article>
+</div>
+
+<div class="col-sm-10 col-sm-offset-1">
+  <hr>
+  <nav>
+    <ul class="pager">
+      <li class="pull-right"><a href="/">Back to Home</a></li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .about-content section {
+        margin-bottom: 3rem;
+    }
+    
+    .about-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .about-content h3 {
+        font-size: 1.75rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: var(--accent-primary);
+    }
+    
+    .about-content p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+    }
+    
+    .about-content ul {
+        font-size: 1.125rem;
+        line-height: 1.75;
+    }
+    
+    .about-content li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .lead {
+        font-size: 1.375rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+    }
+    
+    .social-links {
+        margin-top: 2rem;
+    }
+    
+    .social-links .btn {
+        margin: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid var(--accent-primary);
+        color: var(--text-primary);
+        background-color: transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links .btn:hover {
+        background-color: var(--accent-primary);
+        color: var(--bg-primary);
+    }
+    
+    .social-links .fa {
+        margin-right: 0.5rem;
+    }
+</style>
+
+{% endblock %}

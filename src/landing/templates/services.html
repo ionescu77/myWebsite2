@@ -1,0 +1,278 @@
+{% extends "includes/base.html" %}
+
+{% load custom_markdown %}
+
+{% block header %}
+  <div class="container-fluid default-header">
+      <div class="header-caption background-caption">
+          <div class="header">
+              <h1><code>Services</code></h1>
+          </div>
+      </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="col-lg-10 col-lg-offset-1">
+    <article class="services-content">
+        <!-- Introduction -->
+        <section class="intro-section">
+            <h2>Technology, Life & Art Consulting</h2>
+            <p class="lead">
+                Bringing 25 years of enterprise IT experience together with cultural insight and philosophical 
+                thinking to help organizations and individuals navigate complex challenges.
+            </p>
+        </section>
+
+        <!-- Technology Consulting -->
+        <section class="service-section">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa fa-code fa-3x"></i>
+                </div>
+                <h3>Technology Consulting</h3>
+                <h4>Integration Engineering & System Architecture</h4>
+                <p>
+                    Specializing in enterprise integration, system architecture, and digital transformation. 
+                    I help organizations design and implement robust, scalable solutions that bridge legacy 
+                    systems with modern technologies.
+                </p>
+                <ul class="service-list">
+                    <li><strong>Enterprise Integration</strong> - API design, microservices, middleware solutions</li>
+                    <li><strong>System Architecture</strong> - Solution design, technical strategy, architecture reviews</li>
+                    <li><strong>Digital Transformation</strong> - Modernization strategies, cloud migration, DevOps practices</li>
+                    <li><strong>Technical Leadership</strong> - Team guidance, code reviews, best practices implementation</li>
+                    <li><strong>Technology Stack</strong> - Python, Django, PostgreSQL, REST APIs, Docker, CI/CD</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Life Consulting -->
+        <section class="service-section">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa fa-lightbulb-o fa-3x"></i>
+                </div>
+                <h3>Life Consulting</h3>
+                <h4>Career Development & Freelance Guidance</h4>
+                <p>
+                    Drawing from a decade of successful freelancing and a long corporate career, I provide 
+                    guidance for technology professionals navigating career transitions, freelance work, 
+                    and work-life integration.
+                </p>
+                <ul class="service-list">
+                    <li><strong>Career Transition</strong> - From corporate to freelance, career pivots, professional development</li>
+                    <li><strong>Freelance Strategy</strong> - Building a sustainable freelance practice, client relationships, pricing</li>
+                    <li><strong>Work-Life Balance</strong> - Managing multiple interests, continuous learning, avoiding burnout</li>
+                    <li><strong>Professional Growth</strong> - Skill development, networking, personal branding</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Art & Culture Consulting -->
+        <section class="service-section">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa fa-paint-brush fa-3x"></i>
+                </div>
+                <h3>Art & Culture Consulting</h3>
+                <h4>Cultural Management & Creative Projects</h4>
+                <p>
+                    With a Master's in Cultural Management, I offer consulting for cultural organizations, 
+                    creative projects, and initiatives at the intersection of technology and art.
+                </p>
+                <ul class="service-list">
+                    <li><strong>Cultural Strategy</strong> - Project planning, cultural program development, audience engagement</li>
+                    <li><strong>Digital Culture</strong> - Leveraging technology for cultural institutions, digital exhibitions</li>
+                    <li><strong>Photography Services</strong> - Landscape photography, visual content creation</li>
+                    <li><strong>Creative Technology</strong> - Technical solutions for artistic projects, creative coding</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Philosophical Consulting -->
+        <section class="service-section">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa fa-book fa-3x"></i>
+                </div>
+                <h3>Critical Thinking & Analysis</h3>
+                <h4>Applied Philosophy for Organizations</h4>
+                <p>
+                    Currently completing a Master's in Analytic Philosophy, I apply philosophical methods 
+                    to organizational challenges, helping teams think more clearly and critically about 
+                    complex problems.
+                </p>
+                <ul class="service-list">
+                    <li><strong>Critical Analysis</strong> - Problem framing, logical analysis, decision-making frameworks</li>
+                    <li><strong>Communication Clarity</strong> - Clear thinking, precise language, effective documentation</li>
+                    <li><strong>Ethics & Technology</strong> - Ethical considerations in tech projects, responsible innovation</li>
+                    <li><strong>Workshops</strong> - Critical thinking sessions, philosophical methods for teams</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Working Together -->
+        <section class="cta-section">
+            <h3>Let's Work Together</h3>
+            <p>
+                I work with organizations of all sizes, from startups to large enterprises, as well as 
+                with individuals seeking guidance in technology careers or cultural projects.
+            </p>
+            <p>
+                <strong>My approach:</strong> Combining deep technical expertise with cultural sensitivity 
+                and philosophical rigor. I believe in practical solutions grounded in clear thinking and 
+                long-term vision.
+            </p>
+            <div class="contact-cta">
+                <h4>Get in Touch</h4>
+                <p>Interested in working together? Let's start a conversation.</p>
+                <a href="mailto:razvi_98@yahoo.com?subject=Consulting Inquiry from ionescu77.com" class="btn btn-lg btn-primary">
+                    <i class="fa fa-envelope"></i> Contact Me
+                </a>
+                <div class="contact-methods">
+                    <p>Or connect via:</p>
+                    <ul class="list-inline">
+                        <li><a href="https://de.linkedin.com/in/ionescu77"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                        <li><a href="https://github.com/ionescu77"><i class="fa fa-github fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
+
+<div class="col-sm-10 col-sm-offset-1">
+  <hr>
+  <nav>
+    <ul class="pager">
+      <li class="pull-right"><a href="/">Back to Home</a></li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+    .services-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .services-content section {
+        margin-bottom: 3rem;
+    }
+    
+    .services-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .services-content h3 {
+        font-size: 1.875rem;
+        margin-bottom: 0.5rem;
+        color: var(--accent-primary);
+    }
+    
+    .services-content h4 {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    
+    .services-content p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+    }
+    
+    .lead {
+        font-size: 1.375rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+    }
+    
+    .service-card {
+        background-color: var(--bg-card);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 4px var(--shadow-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px var(--shadow-color);
+    }
+    
+    .service-icon {
+        color: var(--accent-primary);
+        margin-bottom: 1rem;
+    }
+    
+    .service-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .service-list li {
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        position: relative;
+    }
+    
+    .service-list li:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-primary);
+        font-weight: bold;
+    }
+    
+    .cta-section {
+        background-color: var(--bg-card);
+        padding: 3rem 2rem;
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    .contact-cta {
+        margin-top: 2rem;
+    }
+    
+    .btn-primary {
+        background-color: var(--accent-primary);
+        border-color: var(--accent-primary);
+        color: var(--bg-primary);
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--accent-hover);
+        border-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px var(--shadow-color);
+    }
+    
+    .contact-methods {
+        margin-top: 2rem;
+    }
+    
+    .contact-methods .list-inline li {
+        margin: 0 1rem;
+    }
+    
+    .contact-methods a {
+        color: var(--text-primary);
+        transition: color 0.3s ease;
+    }
+    
+    .contact-methods a:hover {
+        color: var(--accent-primary);
+    }
+</style>
+
+{% endblock %}
