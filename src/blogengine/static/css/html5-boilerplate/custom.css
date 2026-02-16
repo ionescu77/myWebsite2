@@ -46,27 +46,34 @@ input, textarea, option {         /* for text in form inputs, cause it was white
 
 .pager li>a, .pager li>span {
     display: inline-block;
-    padding: 5px 14px;
-    background-color: var(--bg-primary, #010101);
-    border: 2px solid var(--border-color, #ddd);
-    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid var(--accent-secondary, #f6bf01);
+    border-radius: 25px;
+    color: var(--accent-secondary, #f6bf01);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-.pager li>a:hover, .pager li>span {
-    background-color: var(--bg-primary, #010101);
+.pager li>a:hover {
+    background-color: var(--accent-primary, #f0ad4e);
     border-color: var(--accent-primary, #f0ad4e);
+    color: var(--bg-primary, #010101);
+    text-decoration: none;
 }
 
 .pager .disabled >a, .pager .disabled >a:focus, .pager .disabled >a:hover, .pager .disabled >span {
   color: var(--text-muted, #777);
   cursor: not-allowed;
-  background-color: unset;
-  border-color: unset;
+  background-color: transparent;
+  border-color: var(--text-muted, #777);
 }
 
 .pager .active >a, .pager .active >a:focus, .pager .active >a:hover {
-  color: var(--text-muted, #777);
-  cursor: not-allowed;
-  background-color: unset;
-  border-color: unset;
+  color: var(--bg-primary, #010101);
+  cursor: default;
+  background-color: var(--accent-primary, #f0ad4e);
+  border-color: var(--accent-primary, #f0ad4e);
 }

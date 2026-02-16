@@ -79,8 +79,8 @@ pre {
 }
 
 p {
-    font-size: 16px;
-    /*line-height: 1.5em;*/
+    font-size: 18px;
+    line-height: 1.6em;
 }
 
 p.lower {
@@ -112,8 +112,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
-    font-weight: 600;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 700;
     line-height: 1.3em;
 }
 
@@ -132,7 +133,7 @@ body .intro-text {
 
 body .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: var(--font-secondary, Georgia, Cambria, "Times New Roman", Times, serif);
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 22px;
     font-style: italic;
     line-height: 1.5;
@@ -246,11 +247,17 @@ ul.social-buttons li a {
 }
 ul.social-buttons i {
    padding-top: 20px;
+   color: var(--text-primary, #fff); /* Make icons respect theme color */
 }
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
     background-color: var(--accent-primary, #f0ad4e);
+}
+ul.social-buttons li a:hover i,
+ul.social-buttons li a:focus i,
+ul.social-buttons li a:active i {
+    color: var(--bg-primary, #000); /* Contrast color on hover */
 }
 
 .list-inline>li { /*Padding between social buttons */
