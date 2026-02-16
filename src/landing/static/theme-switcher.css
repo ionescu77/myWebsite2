@@ -24,8 +24,8 @@
 [data-theme="light"] {
     --bg-primary: #ffffff;
     --bg-secondary: #f5f5f5;
-    --bg-card: rgba(255, 255, 255, 0.95);
-    --text-primary: #333333;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --text-primary: #222222;
     --text-secondary: #555555;
     --text-muted: #777777;
     
@@ -34,7 +34,7 @@
     --accent-hover: #ec971f;
     
     --border-color: #dddddd;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.15);
     --navbar-bg: #f8f8f8;
     --footer-bg: #e9e9e9;
 }
@@ -235,6 +235,11 @@ code {
 
 [data-theme="light"] .header-caption {
     box-shadow: 0 4px 6px var(--shadow-color);
+    background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+[data-theme="light"] .background-caption {
+    background-color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* Apply transitions to specific interactive elements for better performance */

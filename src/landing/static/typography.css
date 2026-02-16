@@ -4,30 +4,30 @@
 /* Using system fonts for better performance and compatibility */
 
 :root {
-    /* Typography Scale */
-    --font-base-size: 16px;
+    /* Typography Scale - Increased for better readability */
+    --font-base-size: 18px;
     --font-scale-ratio: 1.25;
     
-    /* Font Families - System font stack for optimal performance */
-    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-secondary: Georgia, Cambria, "Times New Roman", Times, serif;
-    --font-monospace: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+    /* Font Families - Using system fonts for performance */
+    --font-primary: Georgia, "Times New Roman", Times, serif;
+    --font-secondary: Verdana, Geneva, "Helvetica Neue", Arial, sans-serif;
+    --font-monospace: "Courier New", Courier, monospace;
     
-    /* Font Sizes */
-    --text-xs: 0.75rem;    /* 12px */
-    --text-sm: 0.875rem;   /* 14px */
-    --text-base: 1rem;     /* 16px */
-    --text-lg: 1.125rem;   /* 18px */
-    --text-xl: 1.25rem;    /* 20px */
-    --text-2xl: 1.5rem;    /* 24px */
-    --text-3xl: 1.875rem;  /* 30px */
-    --text-4xl: 2.25rem;   /* 36px */
-    --text-5xl: 3rem;      /* 48px */
+    /* Font Sizes - Increased for better readability */
+    --text-xs: 0.875rem;   /* 14px */
+    --text-sm: 1rem;       /* 16px */
+    --text-base: 1.125rem; /* 18px */
+    --text-lg: 1.25rem;    /* 20px */
+    --text-xl: 1.5rem;     /* 24px */
+    --text-2xl: 1.875rem;  /* 30px */
+    --text-3xl: 2.25rem;   /* 36px */
+    --text-4xl: 3rem;      /* 48px */
+    --text-5xl: 3.75rem;   /* 60px */
     
     /* Line Heights */
     --leading-tight: 1.25;
-    --leading-normal: 1.5;
-    --leading-relaxed: 1.75;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.8;
     --leading-loose: 2;
     
     /* Letter Spacing */
@@ -58,8 +58,8 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-primary);
-    font-weight: 600;
+    font-family: var(--font-secondary);
+    font-weight: 700;
     line-height: var(--leading-tight);
     margin-top: var(--space-6);
     margin-bottom: var(--space-4);
@@ -105,10 +105,9 @@ p {
 article p,
 .post p,
 .content p {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-5);
-    max-width: 70ch; /* Optimal line length for reading */
 }
 
 /* Links */
@@ -219,7 +218,7 @@ section {
 /* Responsive Typography */
 @media (max-width: 768px) {
     :root {
-        --font-base-size: 14px;
+        --font-base-size: 16px;
     }
     
     h1 {
@@ -260,16 +259,16 @@ section {
 
 /* Improve readability of navbar */
 .navbar {
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
 }
 
 .navbar-brand {
-    font-size: var(--text-xl);
-    font-weight: 600;
+    font-size: var(--text-2xl);
+    font-weight: 700;
 }
 
 .navbar-nav > li > a {
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
     padding-top: var(--space-4);
     padding-bottom: var(--space-4);
 }
