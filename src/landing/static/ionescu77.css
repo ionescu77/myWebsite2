@@ -4,7 +4,7 @@
 /* style for header */
 .landing-header {
     text-align: center;
-    color: #fff;
+    color: var(--text-primary, #fff);
     background-attachment: scroll;
     background-color: rgb(0, 0, 0);
     background-image: url('img/ionescu77_Frankfurt_2012_hd.jpg');
@@ -19,7 +19,7 @@
 
 .default-header {
     text-align: center;
-    color: #fff;
+    color: var(--text-primary, #fff);
     background-attachment: scroll;
     background-color: rgb(0, 0, 0);
     background-image: url('img/ionescu77_Frankfurt_2012_hd.jpg');
@@ -34,7 +34,7 @@
 
 /* code format for brand */
 code {
-    color: #f0ad4e;
+    color: var(--accent-primary, #f0ad4e);
     background-color: transparent;
 }
 
@@ -68,10 +68,10 @@ pre {
     padding-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
-    color: #fff;
+    color: var(--text-primary, #fff);
     text-align: center;
     text-shadow: 0 1px 2px rgba(0,0,0,.6);
-    background: rgba(0,0,0,0.7);
+    background: var(--bg-card, rgba(0,0,0,0.7));
 }
 
 .landing-caption {
@@ -96,14 +96,14 @@ a.active {
 }
 
 a {
-    color: #f6bf01;
+    color: var(--accent-secondary, #f6bf01);
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #f6bf01;
+    color: var(--accent-hover, #f6bf01);
 }
 
 h1,
@@ -152,7 +152,7 @@ body .intro-text .intro-heading {
 
 
 .btn-xl {
-    border-color: #f6bf01;
+    border-color: var(--accent-secondary, #f6bf01);
     padding: 30px 70px;
     border-radius: 35px;
     border-width: medium;
@@ -172,7 +172,7 @@ body .intro-text .intro-heading {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
     /*border-color: #fff;*/
-    color: #f6bf01;
+    color: var(--accent-secondary, #f6bf01);
     background-color: transparent;
 }
 
@@ -209,19 +209,19 @@ fieldset[disabled] .btn-xl.active {
 /* Navbar dropdown background color */
 
 .inverse-dropdown {
-  background-color: #222;
-  border-color: #080808;
+  background-color: var(--navbar-bg, #222);
+  border-color: var(--border-color, #080808);
 }
 .inverse-dropdown > li > a {
-  color: #9d9d9d;
+  color: var(--text-secondary, #9d9d9d);
 }
 .inverse-dropdown > li > a:hover {
-  color: #222;
+  color: var(--text-primary, #222);
   background-image: none;
   background-color: none;
 }
 .inverse-dropdown > .divider {
-  background-color: #9d9d9d;
+  background-color: var(--text-secondary, #9d9d9d);
 }
 
 /* SOCIAL Buttons Style */
@@ -231,8 +231,8 @@ ul.social-buttons {
 }
 
 ul.social-buttons li a {
-    border-color: #f6bf01;
-    box-shadow: 0 0 2px 2px #fff;  /* for hollow circle with 3px border*/
+    border-color: var(--accent-secondary, #f6bf01);
+    box-shadow: 0 0 2px 2px var(--text-primary, #fff);  /* for hollow circle with 3px border*/
     display: block;
     width: 60px;
     height: 60px;
@@ -241,7 +241,7 @@ ul.social-buttons li a {
     font-size: 14px;
     line-height: 70px;
     outline: 0;
-    color: #fff;
+    color: var(--text-primary, #fff);
     background-color: transparent;
   /*  background-color: #222;*/
     -webkit-transition: all .3s;
@@ -254,7 +254,7 @@ ul.social-buttons i {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #f0ad4e;
+    background-color: var(--accent-primary, #f0ad4e);
 }
 
 .list-inline>li { /*Padding between social buttons */
