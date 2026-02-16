@@ -3,7 +3,6 @@
 
 from django.contrib.auth import authenticate, login
 
-from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
 from django.utils.encoding import smart_text as smart_unicode
 
@@ -44,16 +43,6 @@ class TagFactory(factory.django.DjangoModelFactory):
     name = "pythonsky"
     description = "Pythonsky the programming language"
     slug = "pythonsky"
-
-
-class FlatPageFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = FlatPage
-        django_get_or_create = ("url", "title", "content")
-
-    url = "/about/"
-    title = "About Me"
-    content = "All about me. Well almost ..."
 
 
 class PostFactory(factory.django.DjangoModelFactory):
@@ -751,38 +740,6 @@ class PostViewTest(BaseAcceptanceTest):
         )
 
 
-# TEST for FLATPAGES Section
-class FlatPageViewTest(BaseAcceptanceTest):
-    def test_create_flatpage(self):
-        # Create FlatPage
-        page = FlatPageFactory()
-
-        # Add the site
-        page.sites.add(Site.objects.all()[0])
-        page.save()
-
-        # Check new page saved
-        all_pages = FlatPage.objects.all()
-        self.assertEquals(len(all_pages), 1)
-        only_page = all_pages[0]
-        self.assertEquals(only_page, page)
-
-        # Check data correct
-        self.assertEquals(only_page.url, "/about/")
-        self.assertEquals(only_page.title, "About Me")
-        self.assertEquals(only_page.content, "All about me. Well almost ...")
-
-        # Get URL
-        page_url = only_page.get_absolute_url()
-
-        # Get the page
-        response = self.client.get(page_url)
-        self.assertEquals(response.status_code, 200)
-
-        # Get title and content in the response
-        self.assertTrue(b"About Me" in response.content)
-        self.assertTrue(b"All about me. Well almost ..." in response.content)
-
 
 # TEST for RSS Feeds
 class FeedTest(BaseAcceptanceTest):
@@ -821,16 +778,12 @@ class SiteMapTest(BaseAcceptanceTest):
     def test_sitemap(self):
         # Create a post
         post = PostFactory()
-        # Create a flat page
-        page = FlatPageFactory()
 
         # Get sitemap
         response = self.client.get("/sitemap.xml")
         self.assertEquals(response.status_code, 200)
         # Check post is present in sitemap
         self.assertTrue(b"my-test-post" in response.content)
-        # Check page is present in sitemap
-        self.assertTrue(b"/about/" in response.content)
 
 
 # TEST for PostCreateForm View

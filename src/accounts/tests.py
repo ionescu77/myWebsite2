@@ -1,6 +1,5 @@
 from django.contrib.auth import authenticate, login
 
-from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
 from django.utils.encoding import smart_text as smart_unicode
 
