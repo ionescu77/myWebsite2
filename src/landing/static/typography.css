@@ -8,8 +8,8 @@
     --font-base-size: 18px;
     --font-scale-ratio: 1.25;
     
-    /* Font Families - Using more readable serif for body text */
-    --font-primary: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+    /* Font Families - Using system fonts for performance */
+    --font-primary: Georgia, "Times New Roman", Times, serif;
     --font-secondary: Verdana, Geneva, "Helvetica Neue", Arial, sans-serif;
     --font-monospace: "Courier New", Courier, monospace;
     
