@@ -235,6 +235,11 @@ code {
 
 [data-theme="light"] .header-caption {
     box-shadow: 0 4px 6px var(--shadow-color);
+    background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+[data-theme="light"] .background-caption {
+    background-color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* Apply transitions to specific interactive elements for better performance */
