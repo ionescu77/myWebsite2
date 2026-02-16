@@ -2,7 +2,21 @@
 
 ## Repository Overview
 
-myWebsite2 is a personal blog/website built with **Django 3.2** and **Python 3.8**, using **PostgreSQL 10.6** as the database. This is an upgrade from the original myWebsite, migrated to Django 3.2 with Python 3.6.7+.
+myWebsite2 is a personal blog and website built with **Django 3.2** and **Python 3.8+**, using **PostgreSQL 10.6** as the database. Features a blog engine, static content pages, and modern UI with light/dark theme support.
+
+### Recent Updates (Feb 2026)
+- ✨ Light/dark theme switcher with 7 accent color palettes
+- 📝 New About Me and Services pages
+- ⚡ Converted static pages from flatpages to direct views (40-70% faster)
+- 🎨 Improved typography with modern system fonts
+- 📱 Enhanced mobile responsiveness
+
+### Features
+- **Blog Engine**: Full-featured blog with categories, tags, and RSS feeds
+- **Theme System**: User-selectable light/dark themes with persistent preferences
+- **Static Pages**: Fast-loading About and Services pages (no database queries)
+- **Admin Interface**: Django admin for content management
+- **SEO**: Sitemap generation and structured URLs
 
 ### Technology Stack
 - **Backend**: Django 3.2.x (production version)
@@ -61,6 +75,14 @@ export DB_PORT_IONESCU77="--some-db-port--"
 ### Testing
 
 **ALWAYS use tox for running tests.** This project uses Django matrix testing.
+
+**Test Matrix Status:**
+
+| Python | Django | Status | Notes |
+|--------|--------|--------|-------|
+| 3.8 | 3.2 (current) | ✅ Required to pass | Production version |
+| 3.10 | 4.2 (LTS) | ⚠️ Informational only | Compatibility testing |
+| 3.12 | 5.2 (future) | ⚠️ Informational only | Forward compatibility |
 
 **Installation:**
 ```bash
@@ -132,9 +154,9 @@ Reports are generated in `./reports/coverage`
 - Run database migrations if models change: `python src/manage.py migrate`
 
 ### Django Apps
-1. **blogengine**: Main blog functionality (posts, comments, etc.)
+1. **blogengine**: Main blog functionality (posts, comments, categories, tags, RSS feeds)
 2. **accounts**: User authentication and account management
-3. **landing**: Landing page functionality
+3. **landing**: Landing page functionality (About, Services pages with theme switcher)
 
 ### Settings Files
 - `base.py`: Shared settings across all environments
@@ -204,10 +226,17 @@ Before finalizing any code changes:
 - Tox tests: ~2-5 minutes depending on the environment
 - Database migrations: ~10-30 seconds
 
+## Deployment Workflow
+
+- **dev** → local.txt → virtualenv (Python 3.8 & runserver)
+- **staging** → ionescu77.avproiect.com (Python 3.8 & mod_wsgi)
+- **production** → ionescu77.com (Python 3.8 & mod_wsgi)
+
 ## Additional Notes
 
 - The project uses mod_wsgi for staging and production deployments
-- Deployment workflow uses git hooks and shell scripts (dev → staging → production)
+- Deployment workflow uses git hooks and shell scripts
 - Project has been migrated multiple times (Python 2 → Python 3, Django 1.x → 3.2)
 - Future upgrades to Django 4.2+ are being monitored via matrix testing
 - Code quality is monitored by Codacy and DeepSource
+- Static pages (About, Services) were converted from flatpages to direct views for better performance
