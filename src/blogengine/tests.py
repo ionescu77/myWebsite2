@@ -740,7 +740,6 @@ class PostViewTest(BaseAcceptanceTest):
         )
 
 
-
 # TEST for RSS Feeds
 class FeedTest(BaseAcceptanceTest):
     def test_all_post_feed(self):
