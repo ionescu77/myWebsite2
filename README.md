@@ -84,6 +84,20 @@ python3 src/manage.py jenkins --enable-coverage --coverage-format html blogengin
 - **staging** → ionescu77.avproiect.com (Python 3.8 & mod_wsgi)
 - **production** → ionescu77.com (Python 3.8 & mod_wsgi)
 
+## Future Sprints
+
+- [x] adaugare Disqus pentru comentarii [Completed](https://github.com/ionescu77/myWebsite/issues/12)
+- [ ] adăugare formular de contact
+- [x] css pt social icons
+- [ ] code refactoring
+- [ ] django i18n & localizare RO, DE, EN
+- [x] image credit
+- [ ] CDN și alternativă la CDN pt boostrap, jquery
+- [ ] publicare automată bookmark-uri folosind evernote API
+- [ ] publicare imagini în articolele de blog
+- [ ] optimizare SEO, meta și Structured Data Markup - schema.org
+- [ ] migrare la Wagtail, care rezolva si din punctele de mai sus: i18n, imagini, seo
+
 ## License
 
 GNU GPL v3.0 - Open source license
