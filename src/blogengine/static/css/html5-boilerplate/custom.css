@@ -38,7 +38,7 @@ input, textarea, option {         /* for text in form inputs, cause it was white
   padding-bottom: 1%;
 }
 .row {
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  /* Removed monospace font for better readability */
 }
 
 .pager {
