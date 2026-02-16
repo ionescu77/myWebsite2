@@ -91,6 +91,7 @@ body {
 
 a {
     color: var(--accent-secondary);
+    transition: color 0.2s ease;
 }
 
 a:hover,
@@ -107,11 +108,13 @@ code {
 .navbar-inverse {
     background-color: var(--navbar-bg);
     border-color: var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav > li > a {
     color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -124,20 +127,24 @@ code {
 .background-caption {
     background-color: var(--bg-card) !important;
     color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-background {
     background-color: var(--footer-bg);
     color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .inverse-dropdown {
     background-color: var(--navbar-bg);
     border-color: var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .inverse-dropdown > li > a {
     color: var(--text-secondary);
+    transition: color 0.2s ease;
 }
 
 .inverse-dropdown > li > a:hover {
@@ -173,12 +180,12 @@ code {
 
 .theme-btn:hover {
     background-color: var(--accent-primary);
-    color: #000;
+    color: var(--bg-primary);
 }
 
 .theme-btn.active {
     background-color: var(--accent-primary);
-    color: #000;
+    color: var(--bg-primary);
 }
 
 .accent-palette {
@@ -230,12 +237,19 @@ code {
     box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-/* Ensure smooth transitions */
-* {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Preserve immediate transitions for interactive elements */
-button, a, .btn {
-    transition: all 0.2s ease;
+/* Apply transitions to specific interactive elements for better performance */
+button,
+a,
+.btn,
+.theme-btn,
+.accent-color,
+.navbar-inverse,
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a,
+.header-caption,
+.background-caption,
+.footer-background,
+.inverse-dropdown,
+.inverse-dropdown > li > a {
+    transition: all 0.3s ease;
 }
